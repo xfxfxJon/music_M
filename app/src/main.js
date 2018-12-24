@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import Tabs from './components/tab'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import "./assets/font/iconfont.css"
+import Axios from "axios"
 
 // require styles
 import 'swiper/dist/css/swiper.css'
@@ -13,6 +15,7 @@ Vue.use(VueAwesomeSwiper)
 Vue.use(Tabs)
 
 Vue.config.productionTip = false
+Vue.prototype.$axios = Axios;
 
 /* eslint-disable no-new */
 new Vue({
@@ -21,3 +24,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
