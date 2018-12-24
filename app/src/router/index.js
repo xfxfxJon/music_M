@@ -1,12 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/components/Login'  
-import Relogin from '@/components/Relogin'
-import Register from '@/components/Register'
+
+//页面
+import Yinmu from '@/containers/Yinmu'
+import Mine from '@/containers/Mine'
+import Dongtai from '@/containers/Dongtai'
+import Recommend from '@/containers/Home_containers/Recommend'
+import MusicList from '@/containers/Home_containers/MusicList'
+import Diantai from '@/containers/Home_containers/Diantai'
+import TopMusic from '@/containers/Home_containers/TopMusic'
 
 Vue.use(Router)
 
 export default new Router({
+  linkActiveClass:"active",
   routes: [
     {
       path: '/',
@@ -22,6 +29,41 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
-    } 
+    },
+    {
+      path: '/home',
+      name: 'Yinmu',
+      component: Yinmu
+    },
+    {
+      path: '/mine',
+      name: 'Mine',
+      component: Mine
+    },
+    {
+      path: '/dongtai',
+      name: 'Dongtai',
+      component: Dongtai
+    },
+    {
+      path: '/recommend',
+      name: 'Recommend',
+      component: Recommend
+    },
+    {
+      path: '/musiclist',
+      name: 'MusicList',
+      component: MusicList
+    },
+    {
+      path: '/diantai',
+      name: 'Diantai',
+      component: Diantai
+    },
+    {
+      path: '/topmusic',
+      name: 'TopMusic',
+      component: TopMusic
+    }
   ]
 })
