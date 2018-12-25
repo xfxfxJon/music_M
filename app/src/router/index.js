@@ -13,6 +13,7 @@ import Login from '@/containers/Login'
 import Register from '@/containers/Register'
 import Relogin from '@/containers/Relogin'
 import Search from '@/containers/Search'
+import Player from '@/containers/Player'
 Vue.use(Router)
 
 export default new Router({
@@ -73,6 +74,11 @@ export default new Router({
       path: '/search',
       name: 'Search',
       component: Search
+    },
+    {
+      path: '/player',
+      name: 'Player',
+      component: Player
     }
   ]
 })
