@@ -1,6 +1,9 @@
 <template>
     <div>
         <div class="nav">
+            <!-- <div class="iocns"> -->
+                <i class="iconfont left_ico"></i>
+            <!-- </div> -->
             <ul class="list">
             <router-link to='/' exact >
                 <li>音沐</li>
@@ -12,11 +15,9 @@
                 <li>动态</li>
             </router-link>
         </ul>
-        </div>
-        <!-- <div class="iocns">
-            <i class="icon left_ico">图标</i>
             <i class="icon right_ico">图标</i>
-        </div> -->
+        </div>
+        
     </div>
 </template>
 
@@ -41,8 +42,8 @@ export default {
 }
 .left_ico{
     position: absolute;
-    left: 20 / 28rem;
-    top: 28 / 28rem;
+    left: 17px;
+    top: 23px;
     
 }
 .right_ico{

@@ -32,4 +32,5 @@ html{font-size:16px;}
 body{ margin:0 auto;max-width:640px; min-width:320px;background-color: #fff;color:#555;height:100%;}
 a{color: #555;text-decoration: none}
 .clearfix{overflow: hidden;clear: both;}
+.iconfont{color:#e41f7f;font-size:20px;}
 </style>
