@@ -31,7 +31,7 @@ export default {
 
 <style lang="less" scoped>
 .list_img{
-    width: 50px;
+    width: 45px;
 }
 .img_one{
     width: 120px;
@@ -48,7 +48,7 @@ export default {
         float: left;
         list-style: none;
         p{
-            font-size: 18px;
+            font-size: 16px;
         }
     }
 }

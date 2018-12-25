@@ -13,6 +13,8 @@
             <tab label='歌单' index='2'></tab>
             <tab label='电台' index='3'>
                 <Carousel :banners='banners1' />
+                <TabSecond />
+                
             </tab>
             <tab label='榜单' index='4'></tab>
         </tabs>
@@ -27,6 +29,7 @@ import Banner from '../components/Banner'
 import Carousel from '../components/Carousel'
 import List from '../components/List'
 import Frame from '../components/Frame'
+import TabSecond from '../components/TabSecond'
 
 export default {
     name:"Yinmu",
@@ -49,7 +52,8 @@ export default {
         Banner,
         Carousel,
         List,
-        Frame
+        Frame,
+        TabSecond    
     },
     methods: {
         getCurrentIndex(index){

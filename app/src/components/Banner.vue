@@ -17,12 +17,6 @@
             <i class="icon left_ico">图标</i>
             <i class="icon right_ico">图标</i>
         </div> -->
-        
-        <div class="menu">
-            <ul>
-
-            </ul>
-        </div>
     </div>
 </template>
 
@@ -65,7 +59,7 @@ export default {
         float: left;
         margin: 0 14px;
         font-size: 20px;
-        // color: rgba(255,255,255,.5)
+        // opacity: .9;
     }
     .active{
         color: white;
