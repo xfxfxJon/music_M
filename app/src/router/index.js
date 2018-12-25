@@ -9,6 +9,9 @@ import Recommend from '@/containers/Home_containers/Recommend'
 import MusicList from '@/containers/Home_containers/MusicList'
 import Diantai from '@/containers/Home_containers/Diantai'
 import TopMusic from '@/containers/Home_containers/TopMusic'
+import Login from '@/containers/Login'
+import Register from '@/containers/Register'
+import Relogin from '@/containers/Relogin'
 
 Vue.use(Router)
 
@@ -31,7 +34,7 @@ export default new Router({
       component: Register
     },
     {
-      path: '/home',
+      path: '/yinmu',
       name: 'Yinmu',
       component: Yinmu
     },
