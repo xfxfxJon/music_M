@@ -2,6 +2,8 @@
     <div>
         <Banner />
         <MineShow/>
+        <Frame/>
+        
 
     </div>
 </template>
@@ -11,6 +13,7 @@
 import Banner from '../components/Banner'
 import MineShow from '../components/MineShow'
 import Recomment from '../components/Recomment'
+import Frame from '../components/Frame'
 
 export default {
     name:"Mine",
@@ -22,7 +25,8 @@ export default {
     components:{
         Banner,
         MineShow,
-        Recomment
+        Recomment,
+        Frame
     }
 }
 </script>
