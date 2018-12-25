@@ -24,7 +24,7 @@ a:link,a:active{text-decoration:none;}
 a:visited{text-decoration:none;}
 a{text-decoration:none;-webkit-touch-callout:none;}
 em,i{font-style:normal;}
-li,ol{list-style:none;}
+li,ol{list-style:none;} 
 html{font-size:16px;}
 .clear{clear:both;height:0;font-size:0;line-height:0;visibility:hidden; overflow:hidden;}
 .fl{float:left;}

@@ -47,7 +47,7 @@ export default {
         border:none;
         color:white;
         font-size:16px;
-        outline: none;
+        
     }
 </style>
 

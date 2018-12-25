@@ -29,7 +29,6 @@ export default {
 }
 .img_one{
     width: 120px;
-    height: 40px;
     // padding-top: 20px;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;

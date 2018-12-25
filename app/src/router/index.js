@@ -24,6 +24,12 @@ export default new Router({
       component: Yinmu
     },
     {
+ 
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
       path: '/relogin',
       name: 'Relogin',
       component: Relogin
@@ -32,11 +38,6 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
-    },
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login
     },
     {
       path: '/mine',
