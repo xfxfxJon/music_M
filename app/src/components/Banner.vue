@@ -17,12 +17,6 @@
             <i class="icon left_ico">图标</i>
             <i class="icon right_ico">图标</i>
         </div> -->
-        
-        <div class="menu">
-            <ul>
-
-            </ul>
-        </div>
     </div>
 </template>
 
@@ -43,7 +37,7 @@ export default {
 .nav{
     width: 100%;
     height: 64px;
-    background-image: url('../assets/img/top.png')
+    background-image: url('../assets/images/top.png')
 }
 .left_ico{
     position: absolute;
@@ -65,6 +59,7 @@ export default {
         float: left;
         margin: 0 14px;
         font-size: 20px;
+        // opacity: .9;
     }
     .active{
         color: white;
