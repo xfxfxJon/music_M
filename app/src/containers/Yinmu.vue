@@ -34,14 +34,14 @@ export default {
         return{
             value:1,
             banners:[
-                require('../assets/img/banner1.png'),
-                require('../assets/img/banner1.png'),
-                require('../assets/img/banner1.png'),
+                require('../assets/images/banner1.png'),
+                require('../assets/images/banner1.png'),
+                require('../assets/images/banner1.png'),
             ],
             banners1:[
-                require('../assets/img/banner2.png'),
-                require('../assets/img/banner2.png'),
-                require('../assets/img/banner2.png'),
+                require('../assets/images/banner2.png'),
+                require('../assets/images/banner2.png'),
+                require('../assets/images/banner2.png'),
             ],
         }
     },

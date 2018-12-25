@@ -2,15 +2,15 @@
     <div>
         <ul class="icon_list">
             <li>
-                <img class="list_img" src="../assets/img/tj.png" alt="">
+                <img class="list_img" src="../assets/images/tj.png" alt="">
                 <p>每日推荐</p>
             </li>
             <li class=" img_one">
-                <img class="list_img" src="../assets/img/reb.png" alt="">
+                <img class="list_img" src="../assets/images/reb.png" alt="">
                 <p>音沐热歌榜</p>
             </li>
             <li>
-                <img class="list_img" src="../assets/img/party.png" alt="">
+                <img class="list_img" src="../assets/images/party.png" alt="">
                 <p>音乐Party</p>
             </li>
         </ul>

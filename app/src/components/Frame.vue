@@ -1,6 +1,9 @@
 <template>
     <div class="frame">
         <h3>推荐</h3>
+        <div>
+            
+        </div>
     </div>
 </template>
 

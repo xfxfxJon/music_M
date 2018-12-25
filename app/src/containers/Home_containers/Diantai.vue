@@ -19,9 +19,9 @@ export default {
     data(){
         return{
             banners:[
-                require('../../assets/img/banner1.png'),
-                require('../../assets/img/banner1.png'),
-                require('../../assets/img/banner1.png'),
+                require('../../assets/images/banner1.png'),
+                require('../../assets/images/banner1.png'),
+                require('../../assets/images/banner1.png'),
             ],
         }
     },
