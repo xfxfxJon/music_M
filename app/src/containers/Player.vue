@@ -12,7 +12,25 @@
            <div class="singer-img-box">
                <img src="../assets/images/singer-xzq.png" alt="">
            </div>
-          
+          <div class="icon">
+             <i class="iconfont icon-shoucang"></i>
+             <i class="iconfont icon-xiazai"></i>
+             <i class="iconfont icon-pinglun"></i>
+             <i class="iconfont icon-gengduo-copy"></i>
+          </div>
+          <div class="play">
+              <span>01:15</span>
+              <img src="../assets/images/scroll-bar.png" alt="">
+              <span>01:15</span>
+              <img src="../assets/images/slide-button.png" alt="" class="slide-button">
+          </div>
+          <div class="play-icon">
+              <i class="iconfont icon-danquxunhuan"></i>
+              <i class="iconfont icon-xiangzuo"></i>
+              <i class="iconfont icon-play"></i>
+              <i class="iconfont icon-xiangyou"></i>
+              <i class="iconfont icon-bofangliebiao"></i>
+          </div>
        </div>
     </div>
 </template>
@@ -64,6 +82,7 @@ export default {
         line-height: 60px;
         font-size:28px;
     }
+    
     .singer-img-box{
         width:80%;
         height:288px;
@@ -79,7 +98,38 @@ export default {
         top:12px;
         left:12px;
     }
-   
+    .icon{
+        margin:120px 0 10px;
+        display: flex;
+    }
+    .icon i,.play-icon i{
+        flex: 1;
+        font-size:28px;
+        text-align: center;
+    }
+    .play{
+        text-align: center;
+        font-size:12px;
+        color:white;
+        position: relative;
+    }
+    .play img{
+        width:60%;
+    }
+    .slide-button{
+        width:15px !important;
+        position: absolute;
+        top:0;
+        left:132px; 
+    }
+    .play-icon{
+        display: flex;
+        line-height: 60px;
+        margin-top:10px;
+    }
+    .icon-play{
+        font-size: 60px !important;
+    }
 </style>
 
 
