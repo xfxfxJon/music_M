@@ -3,7 +3,7 @@
         <ul class="MineShow-list">
             <router-link to='mylike'>
                 <li>
-                    <i>图标</i>
+                    <i class="iconfont">&#xe605;</i>
                     <span>
                         我喜欢
                         <i>(0)</i>
@@ -12,7 +12,7 @@
             </router-link>
             <router-link to='localmusic'>
                 <li>
-                    <i>图标</i>
+                    <i class="iconfont">&#xe680;</i>
                     <span>
                         本地音乐
                         <i>(0)</i>
@@ -21,7 +21,7 @@
             </router-link>
             <router-link to='recentlyplay'>
                 <li>
-                    <i>图标</i>
+                    <i class="iconfont">&#xe8a3;</i>
                     <span>
                         最近播放
                         <i>(0)</i>
@@ -30,7 +30,7 @@
             </router-link>
             <router-link to='dynamic'>
                 <li>
-                    <i>图标</i>
+                    <i class="iconfont">&#xe64f;</i>
                     <span>
                         动态
                         <i>(0)</i>
@@ -39,7 +39,7 @@
             </router-link>
             <router-link to='myradiostation'>
                 <li>
-                    <i>图标</i>
+                    <i class="iconfont">&#xe61c;</i>
                     <span>
                         我的电台
                         <i>(0)</i>
@@ -48,7 +48,7 @@
             </router-link>
             <router-link to='mycollection'>
                 <li>
-                    <i>图标</i>
+                    <i  class="iconfont">&#xe62e;</i>
                     <span>
                         我的收藏
                         <i>(0)</i>
@@ -60,6 +60,7 @@
 </template>
 <script>
 export default {
+
     name:'MineShow',
     data(){
         return{
@@ -81,8 +82,7 @@ export default {
         color:#1f1e1f;
         padding:8px;
         i{
-            width:40px;
-            height:40px;
+        
             display: inline-block; 
         }
         span{
