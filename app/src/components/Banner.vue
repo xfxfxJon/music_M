@@ -65,6 +65,7 @@ export default {
         float: left;
         margin: 0 14px;
         font-size: 20px;
+        // color: rgba(255,255,255,.5)
     }
     .active{
         color: white;
