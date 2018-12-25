@@ -33,4 +33,5 @@ body{ margin:0 auto;max-width:640px; min-width:320px;background-color: #fff;colo
 a{color: #555;text-decoration: none}
 .clearfix{overflow: hidden;clear: both;}
 .iconfont{color:#e41f7f;font-size:20px;}
+html,body,#app{height:100%;}
 </style>
