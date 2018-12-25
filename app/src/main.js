@@ -7,6 +7,8 @@ import Tabs from './components/tab'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import "./assets/font/iconfont.css"
 import Axios from "axios"
+import Mymusictabs from './components/myMusicTab'
+Vue.use(Mymusictabs)
 
 // require styles
 import 'swiper/dist/css/swiper.css'

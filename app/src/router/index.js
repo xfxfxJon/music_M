@@ -13,6 +13,12 @@ import Login from '@/containers/Login'
 import Register from '@/containers/Register'
 import Relogin from '@/containers/Relogin'
 import Search from '@/containers/Search'
+import Dynamic from '@/containers/Dynamic'
+import LocalMusic from '@/containers/LocalMusic'
+import MyCollection from '@/containers/MyCollection'
+import MyLike from '@/containers/MyLike'
+import MyRadioStation from '@/containers/MyRadioStation'
+import RecentlyPlay from '@/containers/RecentlyPlay'
 Vue.use(Router)
 
 export default new Router({
@@ -73,6 +79,36 @@ export default new Router({
       path: '/search',
       name: 'Search',
       component: Search
+    },
+    {
+      path: '/localmusic',
+      name: 'LocalMusic',
+      component: LocalMusic
+    },
+    {
+      path: '/mycollection',
+      name: 'MyCollection',
+      component: MyCollection
+    },
+    {
+      path: '/myradiostation',
+      name: 'MyRadioStation',
+      component: MyRadioStation
+    },
+    {
+      path: '/recentlyplay',
+      name: 'RecentlyPlay',
+      component: RecentlyPlay
+    },
+    {
+      path: '/mylike',
+      name: 'MyLike',
+      component: MyLike
+    },
+    {
+      path: '/dynamic',
+      name: 'Dynamic',
+      component: Dynamic
     }
   ]
 })
