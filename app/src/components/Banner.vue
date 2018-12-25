@@ -1,9 +1,6 @@
 <template>
     <div>
         <div class="nav">
-            <!-- <div class="iocns"> -->
-                <i class="iconfont left_ico"></i>
-            <!-- </div> -->
             <ul class="list">
             <router-link to='/' exact >
                 <li>音沐</li>
@@ -15,7 +12,11 @@
                 <li>动态</li>
             </router-link>
         </ul>
-            <i class="icon right_ico">图标</i>
+            <router-link to='/search'>
+            <i class="iconfont right_ico">
+                <img src="../assets/images/fdj.png" alt="">
+            </i>
+            </router-link>
         </div>
         
     </div>
@@ -40,16 +41,18 @@ export default {
     height: 64px;
     background-image: url('../assets/images/top.png')
 }
-.left_ico{
-    position: absolute;
-    left: 17px;
-    top: 23px;
+// .left_ico{
+//     position: absolute;
+//     left: 17px;
+//     top: 23px;
     
-}
-.right_ico{
-    position: absolute;
-    right: 30 / 28rem;
-    top: 14 / 28rem; 
+// }
+.right_ico img{
+   width: 20px;
+   height: 20px;
+   position: absolute;
+   right: 21px;
+   top: 22px;
 }
 .list{
     width: 204px;;
