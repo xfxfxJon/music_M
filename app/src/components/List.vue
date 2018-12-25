@@ -5,7 +5,7 @@
                 <img class="list_img" src="../assets/img/tj.png" alt="">
                 <p>每日推荐</p>
             </li>
-            <li>
+            <li class=" img_one">
                 <img class="list_img" src="../assets/img/reb.png" alt="">
                 <p>音沐热歌榜</p>
             </li>
@@ -29,7 +29,6 @@ export default {
 }
 .img_one{
     width: 120px;
-    height: 40px;
     // padding-top: 20px;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
