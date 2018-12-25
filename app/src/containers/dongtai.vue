@@ -1,28 +1,26 @@
 <template>
     <div>
-        <!-- 推荐页面 -->
-        <Banner />
-        动态
+         <Banner />
+         <DongtaiComponent />
     </div>
 </template>
-
 <script>
-
 import Banner from '../components/Banner'
-
+import DongtaiComponent from "../components/DongtaiComponent"
 export default {
-    name:"Dongtai",
+    name:'Dongtai',
     data(){
         return{
 
         }
     },
     components:{
-        Banner
+       Banner ,
+       DongtaiComponent
     }
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 </style>
