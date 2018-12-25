@@ -12,7 +12,7 @@ import TopMusic from '@/containers/Home_containers/TopMusic'
 import Login from '@/containers/Login'
 import Register from '@/containers/Register'
 import Relogin from '@/containers/Relogin'
-
+import Search from '@/containers/Search'
 Vue.use(Router)
 
 export default new Router({
@@ -67,6 +67,11 @@ export default new Router({
       path: '/topmusic',
       name: 'TopMusic',
       component: TopMusic
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search
     }
   ]
 })

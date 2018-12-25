@@ -16,7 +16,7 @@ Vue.use(Tabs)
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = Axios;
-
+Vue.prototype.HOST = "/baidu_music_api"
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
