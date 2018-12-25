@@ -1,20 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-//页面
+//页面zhy
 import Yinmu from '@/containers/Yinmu'
 import Mine from '@/containers/Mine'
 import Dongtai from '@/containers/Dongtai'
-import Recommend from '@/containers/Home_containers/Recommend'
-import MusicList from '@/containers/Home_containers/MusicList'
-import Diantai from '@/containers/Home_containers/Diantai'
-import TopMusic from '@/containers/Home_containers/TopMusic'
+//gcx
 import Login from '@/containers/Login'
 import Register from '@/containers/Register'
 import Relogin from '@/containers/Relogin'
 import Search from '@/containers/Search'
 import Player from '@/containers/Player'
-
+//xy
 import Dynamic from '@/containers/Dynamic'
 import LocalMusic from '@/containers/LocalMusic'
 import MyCollection from '@/containers/MyCollection'
@@ -56,26 +53,6 @@ export default new Router({
       path: '/dongtai',
       name: 'Dongtai',
       component: Dongtai
-    },
-    {
-      path: '/recommend',
-      name: 'Recommend',
-      component: Recommend
-    },
-    {
-      path: '/musiclist',
-      name: 'MusicList',
-      component: MusicList
-    },
-    {
-      path: '/diantai',
-      name: 'Diantai',
-      component: Diantai
-    },
-    {
-      path: '/topmusic',
-      name: 'TopMusic',
-      component: TopMusic
     },
     {
       path: '/search',

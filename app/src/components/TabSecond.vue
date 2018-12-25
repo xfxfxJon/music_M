@@ -1,13 +1,20 @@
 <template>
     <div>
         <tabs :value='value' @getIndex="getCurrentIndex">
-            <tab label='电台分类' index='1'></tab>
-            <tab label='电台排行' index='2'></tab>
+            <tab label='电台分类' index='1'>
+                <DtFont />
+            </tab>
+            <tab label='电台排行' index='2'>
+                <DtTop />
+            </tab>
         </tabs>
     </div>
 </template>
 
 <script>
+import DtTop from './DtTop'
+import DtFont from './DtFont'
+
 export default {
     name:"List",
     data(){
@@ -20,6 +27,10 @@ export default {
             this.value = index;
         }
     },
+    components:{
+        DtTop,
+        DtFont
+    }
 }
 </script>
 
