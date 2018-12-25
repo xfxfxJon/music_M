@@ -1,7 +1,7 @@
 <template>
     <div>
         
-       注册
+       注册页面
     </div>
 </template>
 <script>

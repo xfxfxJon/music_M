@@ -17,7 +17,9 @@
                 <input type="password" placeholder="密码">
             </li>
         </ul>
-        <button class="btn">登录</button>
+        <router-link to="/">
+          <button class="btn">登录</button>
+        </router-link>
         <div class="forget">
           <a href="#">忘记密码?</a>
           <a href="#">立即注册</a>

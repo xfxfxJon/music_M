@@ -20,8 +20,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Login',
-      component: Login
+      name: 'Yinmu',
+      component: Yinmu
     },
     {
       path: '/relogin',
@@ -34,9 +34,9 @@ export default new Router({
       component: Register
     },
     {
-      path: '/yinmu',
-      name: 'Yinmu',
-      component: Yinmu
+      path: '/login',
+      name: 'Login',
+      component: Login
     },
     {
       path: '/mine',
