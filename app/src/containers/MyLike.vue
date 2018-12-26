@@ -1,9 +1,10 @@
 <template>
     <div>
-        我喜欢
+        <Return label='我喜欢'/>
     </div>
 </template>
 <script>
+import Return from '../components/Return'
 export default {
     name:'MyLike',
     data(){
@@ -12,7 +13,7 @@ export default {
         }
     },
     components:{
-        
+        Return
     }
 }
 </script>
