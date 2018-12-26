@@ -2,7 +2,7 @@
     <div class="frame">
         <h3>推荐</h3>
         <div class="model">
-                <div class="models">
+                    <div class="models">
                     <img src="../assets/images/singer.png" alt="">
                     <p>用声音，治愈每一个孤独患者</p>
                 </div>

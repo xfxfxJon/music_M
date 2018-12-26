@@ -1,6 +1,7 @@
 <template>
     <div>
         <img src="../assets/images/hot.png" alt="">
+        <i class="ico" @click="$router.back(-1)">icon</i>
         <PlayAll />
         <Sing />
     </div>
@@ -25,5 +26,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.ico{
+    position: absolute;
+    left: 20px;
+    top: 20px;;
+}
 </style>

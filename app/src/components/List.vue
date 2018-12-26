@@ -7,12 +7,12 @@
                     <p>每日推荐</p>
                 </li>
             <!-- </router-link> -->
-            <!-- <router-link to='/'> -->
+            <router-link to='/biglist'>
                 <li class=" img_one">
                     <img class="list_img" src="../assets/images/reb.png" alt="">
                     <p>音沐热歌榜</p>
                 </li>
-            <!-- </router-link> -->
+            </router-link>
             <!-- <router-link to='/'> -->
                 <li>
                     <img class="list_img" src="../assets/images/party.png" alt="">
