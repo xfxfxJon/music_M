@@ -3,10 +3,10 @@
         <Return label='最近播放'/>
         <Mymusictabs :value='value' @getIndex='getCurrentIndex'>
             <Mymusictab label='歌曲' index='1'>
-                <h3>内容一</h3>
+                <SongList/>
             </Mymusictab>
             <Mymusictab label='视频' index='2'>
-                <h3>内容2</h3>
+                <NoData/>
             </Mymusictab>
         </Mymusictabs>
         最近播放
@@ -14,6 +14,8 @@
 </template>
 <script>
 import Return from '../components/Return'
+import SongList from '../components/SongList'
+import NoData from '../components/NoData'
 export default {
     name:'RecentlyPlay',
     data(){
@@ -23,7 +25,9 @@ export default {
         }
     },
     components:{
-        Return
+        Return,
+        SongList,
+        NoData
     },
     methods:{
         getCurrentIndex(value){

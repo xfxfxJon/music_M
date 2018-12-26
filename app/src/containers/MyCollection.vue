@@ -3,16 +3,18 @@
         <Return label='我的收藏'/>
         <Mymusictabs :value='value' @getIndex='getCurrentIndex'>
             <Mymusictab label='音乐' index='1'>
-                <h3>内容一</h3>
+                <SongList/>
             </Mymusictab>
             <Mymusictab label='MV' index='2'>
-                <h3>内容2</h3>
+                <NoData2/>
+                <MyRecomment v-bind:title="title"/>
             </Mymusictab>
             <Mymusictab label='歌单' index='3'>
-                <h3>内容3</h3>
+                <NoData/>
             </Mymusictab>
             <Mymusictab label='专辑' index='4'>
-                <h3>内容4</h3>
+                <NoData2/>
+                <MyRecomment v-bind:title="title2"/>
             </Mymusictab>
         </Mymusictabs>
         我的收藏
@@ -20,15 +22,25 @@
 </template>
 <script>
 import Return from '../components/Return'
+import SongList from '../components/SongList'
+import NoData2 from '../components/NoData2'
+import NoData from '../components/NoData'
+import MyRecomment from '../components/MyRecomment'
 export default {
     name:'MyCollection',
     data(){
         return{
-            value:1
+            value:1,
+            title:'推荐MV',
+            title2:'推荐专辑'
         }
     },
     components:{
-        Return
+        Return,
+        SongList,
+        NoData2,
+        NoData,
+        MyRecomment
     },
      methods:{
         getCurrentIndex(value){

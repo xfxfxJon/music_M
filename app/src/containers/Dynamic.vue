@@ -1,11 +1,12 @@
 <template>
     <div>
         <Return label='我的动态'/>
-        动态
+        <MyDynamic/>
     </div>
 </template>
 <script>
 import Return from '../components/Return'
+import MyDynamic from '../components/MyDynamic'
 export default {
     name:'Dynamic',
     data(){
@@ -14,7 +15,8 @@ export default {
         }
     },
     components:{
-        Return
+        Return,
+        MyDynamic
         
     }
 }
