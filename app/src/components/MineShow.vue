@@ -6,7 +6,6 @@
                     <i class="iconfont">&#xe605;</i>
                     <span>
                         我喜欢
-                        <i>(0)</i>
                     </span>
                 </li>
             </router-link>
@@ -15,7 +14,6 @@
                     <i class="iconfont">&#xe680;</i>
                     <span>
                         本地音乐
-                        <i>(0)</i>
                     </span>
                 </li>
             </router-link>
@@ -24,7 +22,6 @@
                     <i class="iconfont">&#xe8a3;</i>
                     <span>
                         最近播放
-                        <i>(0)</i>
                     </span>
                 </li>
             </router-link>
@@ -33,7 +30,6 @@
                     <i class="iconfont">&#xe64f;</i>
                     <span>
                         动态
-                        <i>(0)</i>
                     </span>
                 </li>
             </router-link>
@@ -42,7 +38,6 @@
                     <i class="iconfont">&#xe61c;</i>
                     <span>
                         我的电台
-                        <i>(0)</i>
                     </span>
                 </li>
             </router-link>
@@ -51,7 +46,6 @@
                     <i  class="iconfont">&#xe62e;</i>
                     <span>
                         我的收藏
-                        <i>(0)</i>
                     </span>
                 </li>
             </router-link>

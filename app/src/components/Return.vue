@@ -36,11 +36,13 @@ div{
     background-color:#af24a5;
     color:white;
     padding-top:5px;
-    padding-left:3px;
     padding-bottom:8px;
     font-size: 16px;
     span{
         margin-left:5px;
+    }
+    .iconfont{
+        color:white;
     }
 }
 </style>
