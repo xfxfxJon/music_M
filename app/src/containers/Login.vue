@@ -3,7 +3,7 @@
     <img src="../assets/images/bar.png" alt="">
     <div  class="container">
       <div class="back">
-        <i class="iconfont icon-fanhuijiantouxiangqingye"></i>
+        <i class="iconfont icon-fanhuijiantouxiangqingye" @click="$router.back(-1)"></i>
       </div>
       <div class="content">
         <img src="../assets/images/logo.png" alt="" class="logo">
@@ -13,7 +13,7 @@
         <router-link to="/register">
            <input type="button" value="注册">
         </router-link>
-        <img src="../assets/images/ortherlogin.png" alt="" class="orther">
+        <p class="orther">其他登录方式</p>
         <ul class="list">
             <li class="item">
                 <div class="circle">
@@ -67,15 +67,14 @@ export default {
   }
   .content input{
     display: block;
-    width:85%;
+    width:80%;
     border:solid 1px #875af0;
     padding: 10px 0;
     margin: 0 auto 25px auto;
     color: #875af0;
   }
   .content .orther{
-    width:85%;
-    margin-top:120px;
+    margin:120px 0 10px 0;
   }
   .circle{
     width:50px;

@@ -12,6 +12,7 @@ import Register from '@/containers/Register'
 import Relogin from '@/containers/Relogin'
 import Search from '@/containers/Search'
 import Player from '@/containers/Player'
+import DtDetail from '@/containers/DtDetail'
 //xy
 import Dynamic from '@/containers/Dynamic'
 import LocalMusic from '@/containers/LocalMusic'
@@ -101,6 +102,11 @@ export default new Router({
       name: 'BigList',
       component: BigList
 
+    },
+    {
+      path: '/dtdetail',
+      name: 'DtDetail',
+      component: DtDetail
     }
   ]
 })

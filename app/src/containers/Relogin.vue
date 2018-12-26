@@ -3,7 +3,7 @@
     <img src="../assets/images/bar.png" alt="">
     <div  class="container">
       <div class="back">
-        <i class="iconfont icon-fanhuijiantouxiangqingye"></i>
+        <i class="iconfont icon-fanhuijiantouxiangqingye" @click="$router.back(-1)"></i>
       </div>
       <div class="content">
         <img src="../assets/images/logo.png" alt="" class="logo">
@@ -22,10 +22,11 @@
         </router-link>
         <div class="forget">
           <a href="#">忘记密码?</a>
-          <a href="#">立即注册</a>
-
+          <router-link to="/register">
+            <a href="#">立即注册</a>
+          </router-link>
         </div>
-        <img src="../assets/images/ortherlogin.png" alt="" class="orther">
+        <p class="orther">其他登录方式</p>
         <ul class="list">
             <li class="item">
                 <div class="circle">
@@ -79,17 +80,17 @@ export default {
   }
   .content .btn{
     display: block;
-    width:75%;
+    width:70%;
     border:solid 1px #875af0;
     border-radius: 20px;
     background-color: white;
-    padding:10px 0;
+    padding:8px 0;
     margin:10px auto 10px;
     font-size: 16px;
     color: #875af0;
   }
   .formlist li{
-    width:75%;
+    width:72%;
     margin:20px auto;
     border-bottom: solid 1px #797979;
   }
@@ -99,8 +100,7 @@ export default {
     margin-right:8px;
    }
   .content .orther{
-    width:85%;
-    margin-top:80px;
+    margin:80px 0 10px 0;
   }
   .circle{
     width:50px;

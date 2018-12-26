@@ -1,7 +1,7 @@
 <template>
     <div class="container">
        <div class="header">
-           <i class="iconfont icon-fanhuijiantouxiangqingye"></i>
+           <i class="iconfont icon-fanhuijiantouxiangqingye" @click="$router.back(-1)"></i>
            <div class="songinfo">
                 <p>演员</p>
                 <p>薛之谦</p>

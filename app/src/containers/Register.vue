@@ -4,7 +4,7 @@
     
     <div  class="container">
       <div class="back">
-        <i class="iconfont icon-fanhuijiantouxiangqingye"></i>
+        <i class="iconfont icon-fanhuijiantouxiangqingye" @click="$router.back(-1)"></i>
         <span>手机号注册</span>
       </div>
       <div class="content">
@@ -20,10 +20,10 @@
             </li>
         </ul>
         <router-link to="/">
-          <button class="btn">下一步</button>
+          <button class="btn">注册</button>
         </router-link>
     
-        <img src="../assets/images/ortherlogin.png" alt="" class="orther">
+        <p class="orther">其他注册方式</p>
         <ul class="list">
             <li class="item">
                 <div class="circle">
@@ -66,7 +66,7 @@ export default {
     padding:10px;
   }
   .back span{
-       font-size: 16px;
+       font-size: 18px;
   } 
   .back i{
     font-size: 24px;
@@ -81,17 +81,17 @@ export default {
   }
   .content .btn{
     display: block;
-    width:75%;
+    width:70%;
     border:solid 1px #875af0;
     border-radius: 20px;
     background-color: white;
-    padding:10px 0;
+    padding:8px 0;
     margin:10px auto 10px;
     font-size: 16px;
     color: #875af0;
   }
   .formlist li{
-    width:75%;
+    width:72%;
     margin:20px auto;
     border-bottom: solid 1px #797979;
   }
@@ -101,8 +101,7 @@ export default {
     margin-right:8px;
    }
   .content .orther{
-    width:85%;
-    margin-top:220px;
+    margin:220px 0 10px 0;
   }
   .circle{
     width:50px;
