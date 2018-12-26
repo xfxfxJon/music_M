@@ -15,8 +15,8 @@
                 <span>商业财经</span>
             </li>
             <li>
-                <i class="iconfont">&#xe60a;</i>
-                <span>人文历史</span>
+                <i class="iconfont">&#xe7ff;</i>&nbsp;&nbsp;
+                <span>3D|电子</span>
             </li>
             <li>
                 <i class="iconfont">&#xe7b7;</i>
@@ -38,9 +38,10 @@
                 <i class="iconfont">&#xe613;</i>
                 <span>音乐故事</span>
             </li>
+            
             <li>
-                <i class="iconfont">&#xe7ff;</i>
-                <span>3D|电子</span>
+                <i class="iconfont">&#xe655;</i>
+                <span>旅途|城市</span>
             </li>
             <li>
                 <i class="iconfont">&#xe61f;</i>
@@ -56,19 +57,19 @@
             </li>
             <li>
                 <i class="iconfont">&#xe63a;</i>
-                <span>3D|电子</span>
+                <span>听广播剧</span>
             </li>
             <li>
                 <i class="iconfont">&#xe612;</i>
-                <span>相声曲艺</span>
+                <span>明星主播</span>
             </li>
             <li>
                 <i class="iconfont">&#xe62e;</i>
-                <span>情感调频</span>
+                <span>科技科学</span>
             </li>
             <li>
                 <i class="iconfont">&#xe601;</i>
-                <span>美文读物</span>
+                <span>校园|教育</span>
             </li>
             
         </ul>
@@ -87,15 +88,20 @@ h3{
     margin: 20px 0 10px;
     font-weight: normal;
     font-size: 18px;
+    color: black;
 }
 .second{
     margin-top: 30px;
 }
 .font{
     :nth-child(1),:nth-child(2),:nth-child(5),:nth-child(6){
-            border-top: 1px solid #ddd;
-            border-bottom: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        border-width: 1px;
         }
+    :nth-child(7),:nth-child(8){
+         border-bottom: 1px solid #ddd;
+    }
         overflow: hidden;
     li{
         float: left;
@@ -104,6 +110,7 @@ h3{
         line-height: 37px;
         text-align: center;
         padding: 5px;
+        color: black;
         
         
         i{

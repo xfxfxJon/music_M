@@ -10,13 +10,13 @@
                <List />
                <Frame />
             </tab>
-            <tab label='歌单' index='2'></tab>
+            <tab label='榜单' index='2'></tab>
             <tab label='电台' index='3'>
                 <Carousel :banners='banners1' />
                 <TabSecond />
                 
             </tab>
-            <tab label='榜单' index='4'></tab>
+            <tab label='专辑' index='4'></tab>
         </tabs>
         
          

@@ -2,13 +2,14 @@
     <div>
         <!-- 电台排行 -->
             <p>最近更新：12月25日</p>
+            <!-- 列表 -->
             <div class="dt_list">
                 <p class="num">1</p>
                 <img src="../assets/images/singer.png" alt="">
                 <ul>
                     <li>小宇</li>
                     <li>网瘾少女大叽叽</li>
-                    <li><span class="hot">Hot &nbsp;&nbsp;</span>223272</li>
+                    <li><span class="hot"><i class="iconfont">&#xe737;</i>&nbsp;</span>223272</li>
                 </ul>
             </div>
             <div class="dt_list">
@@ -17,7 +18,7 @@
                 <ul>
                     <li>小宇</li>
                     <li>网瘾少女大叽叽</li>
-                    <li><span class="hot">Hot &nbsp;&nbsp;</span>223272</li>
+                    <li><span class="hot"><i class="iconfont">&#xe737;</i>&nbsp;</span>223272</li>
                 </ul>
             </div>
             <div class="dt_list">
@@ -26,7 +27,7 @@
                 <ul>
                     <li>小宇</li>
                     <li>网瘾少女大叽叽</li>
-                    <li><span class="hot">Hot &nbsp;&nbsp;</span>223272</li>
+                    <li><span class="hot"><i class="iconfont">&#xe737;</i>&nbsp;</span>223272</li>
                 </ul>
             </div>
             <div class="dt_list">
@@ -35,7 +36,7 @@
                 <ul>
                     <li>小宇</li>
                     <li>网瘾少女大叽叽</li>
-                    <li><span class="hot">Hot &nbsp;&nbsp;</span>223272</li>
+                    <li><span class="hot"><i class="iconfont">&#xe737;</i>&nbsp;</span>223272</li>
                 </ul>
             </div>
             <div class="dt_list">
@@ -44,7 +45,7 @@
                 <ul>
                     <li>小宇</li>
                     <li>网瘾少女大叽叽</li>
-                    <li><span class="hot">Hot &nbsp;&nbsp;</span>223272</li>
+                    <li><span class="hot"><i class="iconfont">&#xe737;</i>&nbsp;</span>223272</li>
                 </ul>
             </div>
     </div>
@@ -92,9 +93,9 @@ export default {
         :nth-child(3){
             font-size: 12px;
             color: #969798;
-            .hot{
+            .hot i{
                 color: #aa24a9;
-                font-size: 12px;
+                font-size: 17px;
             }
         }
     }
