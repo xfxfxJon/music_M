@@ -19,8 +19,13 @@
                 <TabSecond />
                 
             </tab>
-            <tab label='专辑' index='4'>
-                <Carousel :banners='banners2' />
+            <tab label='歌单' index='4'>
+                <SongSheet />
+                <SmallList />
+                <SmallList />
+                <SmallList />
+                <SmallList />
+                <SmallList />
             </tab>
         </tabs>
         
@@ -36,6 +41,8 @@ import List from '../components/List'
 import Frame from '../components/Frame'
 import TabSecond from '../components/TabSecond'
 import TopList from '../components/TopList'
+import SongSheet from '../components/SongSheet'
+import SmallList from '../components/SmallList'
 
 export default {
     name:"Yinmu",
@@ -66,6 +73,8 @@ export default {
         Frame,
         TabSecond,
         TopList,
+        SongSheet,
+        SmallList
     },
     methods: {
         getCurrentIndex(index){

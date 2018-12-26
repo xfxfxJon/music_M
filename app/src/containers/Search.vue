@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="header">
-            <i @click="$router.back(-1)" class="iconfont icon-fanhuijiantouxiangqingye" ></i>
+            <i class="iconfont icon-fanhuijiantouxiangqingye" ></i>
             <SearchInput class="search"/>
         </div>
         

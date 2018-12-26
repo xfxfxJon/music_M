@@ -26,6 +26,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+img{
+    width: 100%;
+}
 .ico{
     position: absolute;
     left: 20px;
