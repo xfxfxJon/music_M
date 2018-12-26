@@ -10,13 +10,18 @@
                <List />
                <Frame />
             </tab>
-            <tab label='榜单' index='2'></tab>
+            <tab label='榜单' index='2'>
+                <!-- 待用 -->
+                <TopList />
+            </tab>
             <tab label='电台' index='3'>
                 <Carousel :banners='banners1' />
                 <TabSecond />
                 
             </tab>
-            <tab label='专辑' index='4'></tab>
+            <tab label='专辑' index='4'>
+                <Carousel :banners='banners2' />
+            </tab>
         </tabs>
         
          
@@ -30,6 +35,7 @@ import Carousel from '../components/Carousel'
 import List from '../components/List'
 import Frame from '../components/Frame'
 import TabSecond from '../components/TabSecond'
+import TopList from '../components/TopList'
 
 export default {
     name:"Yinmu",
@@ -46,6 +52,11 @@ export default {
                 require('../assets/images/banner2.png'),
                 require('../assets/images/banner2.png'),
             ],
+            banners2:[
+                require('../assets/images/banner3.png'),
+                require('../assets/images/banner3.png'),
+                require('../assets/images/banner3.png'),
+            ],
         }
     },
     components:{
@@ -53,7 +64,8 @@ export default {
         Carousel,
         List,
         Frame,
-        TabSecond    
+        TabSecond,
+        TopList,
     },
     methods: {
         getCurrentIndex(index){

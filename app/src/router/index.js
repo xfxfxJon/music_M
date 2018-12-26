@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import Yinmu from '@/containers/Yinmu'
 import Mine from '@/containers/Mine'
 import Dongtai from '@/containers/Dongtai'
+import BigList from '@/containers/BigList'
 //gcx
 import Login from '@/containers/Login'
 import Register from '@/containers/Register'
@@ -93,6 +94,12 @@ export default new Router({
       path: '/dynamic',
       name: 'Dynamic',
       component: Dynamic
+
+    },
+    {
+      path: '/biglist',
+      name: 'BigList',
+      component: BigList
 
     }
   ]

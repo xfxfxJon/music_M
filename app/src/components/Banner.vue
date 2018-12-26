@@ -1,73 +1,98 @@
 <template>
-    <div>
-        <div class="nav">
-            <ul class="list">
-            <router-link to='/' exact >
-                <li>音沐</li>
-            </router-link>
-            <router-link to='/mine'>
-                <li>我的</li>
-            </router-link>
-            <router-link to='/dongtai'>
-                <li>动态</li>
-            </router-link>
-        </ul>
-            <router-link to='/search'>
-            <i class="iconfont right_ico">
-                <img src="../assets/images/fdj.png" alt="">
-            </i>
-            </router-link>
-        </div>
-        
+  <div>
+    <PersonalCenter v-show="isShowCenter"/>
+    <div class="shadow" v-show="isShowCenter" @click="isShowCenter = false"></div>
+    <div class="nav">
+      <img
+        src="../assets/images/header_list.png"
+        alt
+        class="header_list"
+        @click="isShowCenter = true"
+      >
+      <ul class="list">
+        <router-link to="/" exact>
+          <li>音沐</li>
+        </router-link>
+        <router-link to="/mine">
+          <li>我的</li>
+        </router-link>
+        <router-link to="/dongtai">
+          <li>动态</li>
+        </router-link>
+      </ul>
+      <router-link to="/search">
+        <i class="iconfont right_ico">
+          <img src="../assets/images/fdj.png" alt>
+        </i>
+      </router-link>
     </div>
+  </div>
 </template>
 
 <script>
+import PersonalCenter from "../containers/Center";
 
 export default {
-    name:'Banner',
-    data(){
-        return{
-          
-        }
-    }
-}
+  name: "Banner",
+  data() {
+    return {
+      isShowCenter: false
+    };
+  },
+  components: { PersonalCenter }
+};
 </script>
 
 <style lang="less" scoped>
-
-.nav{
-    width: 100%;
-    height: 64px;
-    background-image: url('../assets/images/top.png')
+.nav {
+  width: 100%;
+  height: 64px;
+  background-image: url("../assets/images/top.png");
 }
 // .left_ico{
 //     position: absolute;
 //     left: 17px;
 //     top: 23px;
-    
+
 // }
-.right_ico img{
-   width: 20px;
-   height: 20px;
-   position: absolute;
-   right: 21px;
-   top: 22px;
+.right_ico img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 21px;
+  top: 22px;
 }
-.list{
-    width: 204px;;
-    line-height: 64px;
-    margin: 0 auto;
-    li{
-        list-style: none;
-        float: left;
-        margin: 0 14px;
-        font-size: 20px;
-        // opacity: .9;
-    }
-    .active{
-        color: white;
-    }
+.list {
+  width: 204px;
+  line-height: 64px;
+  margin: 0 auto;
+  li {
+    list-style: none;
+    float: left;
+    margin: 0 14px;
+    font-size: 20px;
+    // opacity: .9;
+  }
+  .active {
+    color: white;
+  }
+}
+
+.header_list {
+  position: absolute;
+  top: 22px;
+  left: 21px;
+  height: 20px;
+  width: 20px;
+}
+
+.shadow {
+  opacity: 0.3;
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 887;
 }
 </style>
 
