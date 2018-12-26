@@ -35,7 +35,7 @@ export default {
         float: left;
     }
     ul{
-        width: 250px;
+        width: 205px;
         float: left;
         margin-left: 10px;
         :nth-child(1){

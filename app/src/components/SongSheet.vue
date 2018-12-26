@@ -48,7 +48,7 @@ export default {
     width: 210px;
     position: absolute;
     top:152px;
-    right: 53px;
+    right: 13px;
     p{
         color: white;
         font-size: 14px;

@@ -4,6 +4,7 @@
         <i class="ico" @click="$router.back(-1)">icon</i>
         <PlayAll />
         <Sing />
+        <Sing />
     </div>
 </template>
 

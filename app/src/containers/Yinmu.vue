@@ -16,7 +16,9 @@
             </tab>
             <tab label='电台' index='3'>
                 <Carousel :banners='banners1' />
-                <TabSecond />
+                <!-- <TabSecond /> 这是网易云电台  待用--> 
+                <DtList />
+                <DtList />
                 
             </tab>
             <tab label='歌单' index='4'>
@@ -43,6 +45,7 @@ import TabSecond from '../components/TabSecond'
 import TopList from '../components/TopList'
 import SongSheet from '../components/SongSheet'
 import SmallList from '../components/SmallList'
+import DtList from '../components/DtList'
 
 export default {
     name:"Yinmu",
@@ -55,9 +58,9 @@ export default {
                 require('../assets/images/banner1.png'),
             ],
             banners1:[
-                require('../assets/images/banner2.png'),
-                require('../assets/images/banner2.png'),
-                require('../assets/images/banner2.png'),
+                require('../assets/images/banner3.png'),
+                require('../assets/images/banner3.png'),
+                require('../assets/images/banner3.png'),
             ],
             banners2:[
                 require('../assets/images/banner3.png'),
@@ -74,7 +77,8 @@ export default {
         TabSecond,
         TopList,
         SongSheet,
-        SmallList
+        SmallList,
+        DtList
     },
     methods: {
         getCurrentIndex(index){
