@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Return label='我的收藏'/>
         <Mymusictabs :value='value' @getIndex='getCurrentIndex'>
             <Mymusictab label='音乐' index='1'>
                 <h3>内容一</h3>
@@ -18,6 +19,7 @@
     </div>
 </template>
 <script>
+import Return from '../components/Return'
 export default {
     name:'MyCollection',
     data(){
@@ -26,7 +28,7 @@ export default {
         }
     },
     components:{
-        
+        Return
     },
      methods:{
         getCurrentIndex(value){
