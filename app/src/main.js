@@ -9,7 +9,7 @@ import "./assets/font/iconfont.css"
 import Axios from "axios"
 import Mymusictabs from './components/myMusicTab'
 import './assets/iconfont/iconfont.css'
-import './assets/zhyfont/iconfont.css'
+// import './assets/zhyfont/iconfont.css'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(Mymusictabs)

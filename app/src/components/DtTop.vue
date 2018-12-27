@@ -3,7 +3,8 @@
         <!-- 电台排行 -->
             <p>最近更新：12月25日</p>
             <!-- 列表 -->
-            <div class="dt_list">
+            <router-link to="player">
+                <div class="dt_list">
                 <p class="num">1</p>
                 <img src="../assets/images/singer.png" alt="">
                 <ul>
@@ -12,7 +13,9 @@
                     <li><span class="hot"><i class="iconfont">&#xe737;</i>&nbsp;</span>223272</li>
                 </ul>
             </div>
-            <div class="dt_list">
+            </router-link>
+            <router-link to="player">
+                <div class="dt_list">
                 <p class="num">1</p>
                 <img src="../assets/images/singer.png" alt="">
                 <ul>
@@ -21,7 +24,9 @@
                     <li><span class="hot"><i class="iconfont">&#xe737;</i>&nbsp;</span>223272</li>
                 </ul>
             </div>
-            <div class="dt_list">
+            </router-link>
+            <router-link to="player">
+                <div class="dt_list">
                 <p class="num">1</p>
                 <img src="../assets/images/singer.png" alt="">
                 <ul>
@@ -30,24 +35,7 @@
                     <li><span class="hot"><i class="iconfont">&#xe737;</i>&nbsp;</span>223272</li>
                 </ul>
             </div>
-            <div class="dt_list">
-                <p class="num">1</p>
-                <img src="../assets/images/singer.png" alt="">
-                <ul>
-                    <li>小宇</li>
-                    <li>网瘾少女大叽叽</li>
-                    <li><span class="hot"><i class="iconfont">&#xe737;</i>&nbsp;</span>223272</li>
-                </ul>
-            </div>
-            <div class="dt_list">
-                <p class="num">1</p>
-                <img src="../assets/images/singer.png" alt="">
-                <ul>
-                    <li>小宇</li>
-                    <li>网瘾少女大叽叽</li>
-                    <li><span class="hot"><i class="iconfont">&#xe737;</i>&nbsp;</span>223272</li>
-                </ul>
-            </div>
+            </router-link>
     </div>
 </template>
 

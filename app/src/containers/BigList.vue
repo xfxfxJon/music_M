@@ -1,7 +1,7 @@
 <template>
     <div>
         <img src="../assets/images/hot.png" alt="">
-        <i class="ico" @click="$router.back(-1)">icon</i>
+        <i class="ico iconfont icon-fanhuijiantouxiangqingye" @click="$router.back(-1)"></i>
         <PlayAll />
         <Sing />
         <Sing />
@@ -32,7 +32,9 @@ img{
 }
 .ico{
     position: absolute;
-    left: 20px;
-    top: 20px;;
+    left: 10px;
+    top: 20px;
+    color: white;
+    font-size: 34px;
 }
 </style>

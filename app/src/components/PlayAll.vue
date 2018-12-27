@@ -2,11 +2,11 @@
     <div>
         <ul class="paly">
             <li>
-                <i>icon </i>
+                <img src="../assets/images/bofang.png" alt="">
                 <p>&nbsp;&nbsp;播放全部</p>
             </li>
             <li>
-                <i>icon </i>
+                <img src="../assets/images/duoxuan.png" alt="">
                 <p>&nbsp;&nbsp;多选</p>
             </li>
         </ul>
@@ -33,6 +33,9 @@ export default {
         float: left;
         line-height: 30px;
         color: black;
+        img{
+            width: 26px;
+        }
     }
     
 }

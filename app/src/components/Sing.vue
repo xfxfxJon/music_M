@@ -1,30 +1,15 @@
 <template>
     <div>
-       <div class="dt_list">
+        <router-link to="/player">
+            <div class="dt_list">
             <p class="num">1</p>
             <ul>
                 <li>小宇</li>
                 <li><span>SQ</span>网瘾少女大叽叽</li>
             </ul>
             <span>···</span>
-        </div>
-        <div class="dt_list">
-            <p class="num">1</p>
-            <ul>
-                <li>小宇</li>
-                <li><span>SQ</span>网瘾少女大叽叽</li>
-            </ul>
-            <span>···</span>
-        </div>
-        <div class="dt_list">
-            <p class="num">1</p>
-            <ul>
-                <li>小宇</li>
-                <li><span>SQ</span>网瘾少女大叽叽</li>
-            </ul>
-            <span>···</span>
-        </div>
-
+            </div>
+        </router-link>
     </div>
 </template>
 

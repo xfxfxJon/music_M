@@ -1,14 +1,18 @@
 <template>
     <div class="frame">
         <div class="model">
-                    <div class="models">
+            <router-link to="/player">
+                <div class="models">
                     <img src="../assets/images/boy.png" alt="">
                     <p>声控特辑|性感男声 开口即心动</p>
                 </div>
+            </router-link>
+            <router-link to="/player">
                 <div class="models">
                     <img src="../assets/images/girl.png" alt="">
                     <p>你的青春有没有属于你的一首歌</p>
                 </div>
+            </router-link>    
         </div>
     </div>
 </template>
