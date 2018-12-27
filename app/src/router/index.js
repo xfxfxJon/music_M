@@ -107,6 +107,16 @@ export default new Router({
       path: '/dtdetail',
       name: 'DtDetail',
       component: DtDetail
+    },
+    {
+      path: '/personalCenter',
+      name: 'PersonalCenter',
+      component: PersonalCenter
+    },
+    {
+      path: '/listenmusic',
+      name: 'ListenMusic',
+      component: ListenMusic
     }
   ]
 })

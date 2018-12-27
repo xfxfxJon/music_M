@@ -1,9 +1,11 @@
 <template>
   <div class="center_container">
     <div class="center_top">
-      <img src="../assets/images/center_author.png" alt>
-      <div class="center_lv">LV.10</div>
-      <p class="center_title">音沐音乐</p>
+      <router-link to="/personalCenter">
+        <img src="../assets/images/center_author.png" alt>
+        <div class="center_lv">LV.10</div>
+        <p class="center_title">音沐音乐</p>
+      </router-link>
     </div>
     <ul>
       <li>
@@ -43,7 +45,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/">
+        <router-link to="/listenMusic">
           <img src="../assets/images/center_recognition.png" alt>
           <span>听歌识曲</span>
         </router-link>
@@ -98,7 +100,7 @@ export default {
   border-radius: 50%;
   margin: 35px auto 10px;
 }
-ul{
+ul {
   clear: both;
 }
 ul > li {
@@ -113,7 +115,7 @@ ul > li img {
   top: -3px;
 }
 
-.center_lv{
+.center_lv {
   border: 1px solid;
   border-radius: 10px;
   font-size: 10px;
@@ -121,7 +123,7 @@ ul > li img {
   margin: 0 auto 10px;
 }
 
-.center_title{
+.center_title {
   padding-bottom: 10px;
 }
 </style>

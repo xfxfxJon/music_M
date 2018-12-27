@@ -1,15 +1,110 @@
 <template>
-  <div>
-    个人中心
+  <div class="personal_center">
+    <div class="background">
+      <div class="background_top">
+        <i class="iconfont icon-fanhuijiantouxiangqingye"></i>
+      </div>
+      <img src="../../assets/images/center_author.png" alt>
+      <p>音沐音乐</p>
+      <p>
+        关注
+        <span>100</span>
+        粉丝
+        <span>10万</span>
+      </p>
+      <div class="edit">编辑</div>
+    </div>
+    <div class="tap">
+      <el-tabs v-model="activeName" @tab-click="handleClick">
+        <el-tab-pane label="音乐" name="first">
+          <PersonalCenterMusic/>
+        </el-tab-pane>
+        <el-tab-pane label="动态" name="second">
+          <PersonalCenterDynamic/>
+        </el-tab-pane>
+        <el-tab-pane label="关于我" name="third">
+          <PersonalCenterMe/>
+        </el-tab-pane>
+      </el-tabs>
+    </div>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'PersonalCenter'
-  }
+import PersonalCenterMusic from "../../components/PersonalCenterMusic";
+import PersonalCenterDynamic from "../../components/PersonalCenterDynamic";
+import PersonalCenterMe from "../../components/PersonalCenterMe";
+
+export default {
+  name: "PersonalCenter",
+  data() {
+    return {
+      activeName: "first"
+    };
+  },
+  methods: {
+    handleClick(tab, event) {
+      // console.log(tab, event);
+    }
+  },
+  components: { PersonalCenterMusic, PersonalCenterDynamic, PersonalCenterMe }
+};
 </script>
 
-<style scoped>
 
+<style lang="less" scoped>
+.personal_center {
+  height: 100%;
+  text-align: center;
+  .background {
+    height: 40%;
+    color: #fff;
+    background: url("../../assets/images/personal_center_bg.png") no-repeat;
+    background-size: cover;
+    .background_top {
+      i {
+        font-size: 24px;
+        color: white;
+        position: fixed;
+        top: 20px;
+        left: 10px;
+      }
+    }
+    img {
+      width: 70px;
+      height: 70px;
+      margin-top: 50px;
+    }
+    p {
+      margin: 10px 0;
+      font-weight: 100;
+    }
+    .edit {
+      border-radius: 4px;
+      border: 1px solid #fff;
+      padding: 5px 20px;
+      width: 60px;
+      margin: 20px auto 0;
+    }
+  }
+}
+</style>
+<style>
+.el-tabs__nav {
+  width: 100%;
+}
+.el-tabs__item {
+  width: 33.3%;
+  padding: 0;
+  font-size: 18px;
+}
+.el-tabs__item.is-active {
+  color: #e41f6e;
+}
+.el-tabs__active-bar {
+  background-color: #e41f6e;
+}
+.el-tabs__header {
+  margin-bottom: 0px;
+}
 </style>
