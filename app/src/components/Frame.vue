@@ -14,18 +14,6 @@
                     <img src="../assets/images/singer.png" alt="">
                     <p>用声音，治愈每一个孤独患者</p>
                 </div>
-                <div class="models">
-                    <img src="../assets/images/singer.png" alt="">
-                    <p>用声音，治愈每一个孤独患者</p>
-                </div>
-                <div class="models">
-                    <img src="../assets/images/singer.png" alt="">
-                    <p>用声音，治愈每一个孤独患者</p>
-                </div>
-                <div class="models">
-                    <img src="../assets/images/singer.png" alt="">
-                    <p>用声音，治愈每一个孤独患者</p>
-                </div>
         </div>
     </div>
 </template>

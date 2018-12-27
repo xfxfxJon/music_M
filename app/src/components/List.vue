@@ -1,24 +1,27 @@
 <template>
     <div>
         <ul class="icon_list">
-            <!-- <router-link to='/'> -->
-                <li class="icon_li">
+            
+            <li class="icon_li">
+                <router-link to='/biglist'>
                     <img class="list_img" src="../assets/images/tj.png" alt="">
                     <p>每日推荐</p>
-                </li>
-            <!-- </router-link> -->
+                </router-link>
+            </li>
+            
             <router-link to='/biglist'>
-                <li class=" img_one">
+                <li class=" icon_li img_one">
                     <img class="list_img" src="../assets/images/reb.png" alt="">
                     <p>音沐热歌榜</p>
                 </li>
             </router-link>
-            <!-- <router-link to='/'> -->
-                <li>
-                    <img class="list_img" src="../assets/images/party.png" alt="">
-                    <p>音乐Party</p>
-                </li>
-            <!-- </router-link> -->
+            
+            <li class="icon_li">
+                <router-link to='/biglist'>
+                <img class="list_img" src="../assets/images/party.png" alt="">
+                <p>音乐Party</p>
+                </router-link>
+            </li>
         </ul>
     </div>
 </template>
@@ -42,7 +45,7 @@ export default {
 .icon_list{
     display: flex;
     margin-top: 10px;
-    li{
+    .icon_li{
         flex: 1;
         text-align: center;
         float: left;

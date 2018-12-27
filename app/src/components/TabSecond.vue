@@ -2,7 +2,9 @@
     <div>
         <tabs :value='value' @getIndex="getCurrentIndex">
             <tab label='电台分类' index='1'>
-                <DtFont />
+                <!-- <DtFont />  模仿网易云 -->
+                <DtList />
+                <DtList />
             </tab>
             <tab label='电台排行' index='2'>
                 <DtTop />
@@ -13,7 +15,8 @@
 
 <script>
 import DtTop from './DtTop'
-import DtFont from './DtFont'
+// import DtFont from './DtFont'
+import DtList from './DtList'
 
 export default {
     name:"List",
@@ -29,7 +32,8 @@ export default {
     },
     components:{
         DtTop,
-        DtFont
+        DtList
+        // DtFont
     }
 }
 </script>

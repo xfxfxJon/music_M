@@ -9,6 +9,7 @@
                <Carousel :banners='banners' />
                <List />
                <Frame />
+               <Frame />
             </tab>
             <tab label='榜单' index='2'>
                 <!-- 待用 -->
@@ -16,9 +17,8 @@
             </tab>
             <tab label='电台' index='3'>
                 <Carousel :banners='banners1' />
-                <!-- <TabSecond /> 这是网易云电台  待用--> 
-                <DtList />
-                <DtList />
+                <!-- 这是网易云电台  待用  -->
+                <TabSecond /> 
                 
             </tab>
             <tab label='歌单' index='4'>
