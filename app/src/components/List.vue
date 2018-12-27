@@ -28,7 +28,12 @@
 
 <script>
 export default {
-    name:"List"
+    name:"List",
+    data(){
+        return{
+
+        }
+    },
 }
 </script>
 

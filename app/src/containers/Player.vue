@@ -106,6 +106,7 @@ export default {
         flex: 1;
         font-size:28px;
         text-align: center;
+        // color: white;
     }
     .play{
         text-align: center;

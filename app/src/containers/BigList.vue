@@ -16,7 +16,7 @@ export default {
     name:"BigList",
     data(){
         return{
-
+           
         }
     },
     components:{

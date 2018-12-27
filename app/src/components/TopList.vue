@@ -3,35 +3,13 @@
         <h3 class="top">音沐音乐官方榜</h3>
         <div class="dt_list">
             <img src="../assets/images/bang.png" alt="">
-            <ul>
+            <router-link to="/biglist">
+                <ul>
                 <li>1.圣诞夜 - 朱星杰</li>
                 <li>2.我要给世界最悠长的湿吻 - 蔡健雅</li>
                 <li>3.雾霭有时晴 - 河图/音频怪物</li>
             </ul>
-        </div>
-        <div class="dt_list">
-            <img src="../assets/images/bang.png" alt="">
-            <ul>
-                <li>1.圣诞夜 - 朱星杰</li>
-                <li>2.我要给世界最悠长的湿吻 - 蔡健雅</li>
-                <li>3.雾霭有时晴 - 河图/音频怪物</li>
-            </ul>
-        </div>
-        <div class="dt_list">
-            <img src="../assets/images/bang.png" alt="">
-            <ul>
-                <li>1.圣诞夜 - 朱星杰</li>
-                <li>2.我要给世界最悠长的湿吻 - 蔡健雅</li>
-                <li>3.雾霭有时晴 - 河图/音频怪物</li>
-            </ul>
-        </div>
-        <div class="dt_list">
-            <img src="../assets/images/bang.png" alt="">
-            <ul>
-                <li>1.圣诞夜 - 朱星杰</li>
-                <li>2.我要给世界最悠长的湿吻 - 蔡健雅</li>
-                <li>3.雾霭有时晴 - 河图/音频怪物</li>
-            </ul>
+            </router-link>
         </div>
         
     </div>
