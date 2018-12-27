@@ -23,6 +23,11 @@ import RecentlyPlay from '@/containers/RecentlyPlay'
 
 Vue.use(Router)
 
+
+// center
+import PersonalCenter from '@/containers/center/PersonalCenter'
+import ListenMusic from '@/containers/center/listenMusic'
+
 export default new Router({
   linkActiveClass:"active",
   routes: [
