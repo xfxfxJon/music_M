@@ -24,7 +24,7 @@ export default {
 
 <style lang="less" scope>
 .header {
-  font-size: 24px;
+  font-size: 20px;
   height: 60px;
   padding-left: 20px;
   background: #875af0;

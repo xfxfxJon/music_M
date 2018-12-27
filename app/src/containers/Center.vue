@@ -15,31 +15,31 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/">
+        <router-link to="/vip">
           <img src="../assets/images/center_vip.png" alt>
           <span>会员中心</span>
         </router-link>
       </li>
       <li>
-        <router-link to="/">
+        <router-link to="/shopping">
           <img src="../assets/images/center_shopping.png" alt>
           <span>商城</span>
         </router-link>
       </li>
       <li>
-        <router-link to="/">
+        <router-link to="/friends">
           <img src="../assets/images/center_friend.png" alt>
           <span>我的好友</span>
         </router-link>
       </li>
       <li>
-        <router-link to="/">
+        <router-link to="/nearby">
           <img src="../assets/images/center_nearby.png" alt>
           <span>附近的人</span>
         </router-link>
       </li>
       <li>
-        <router-link to="/">
+        <router-link to="/skin">
           <img src="../assets/images/center_skin.png" alt>
           <span>个性皮肤</span>
         </router-link>
@@ -51,19 +51,15 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/">
           <img src="../assets/images/center_timing.png" alt>
           <span>定时播放</span>
-        </router-link>
       </li>
       <li>
-        <router-link to="/">
           <img src="../assets/images/center_night.png" alt>
           <span>夜间模式</span>
-        </router-link>
       </li>
       <li>
-        <router-link to="/">
+        <router-link to="/settings">
           <img src="../assets/images/center_settings.png" alt>
           <span>设置</span>
         </router-link>

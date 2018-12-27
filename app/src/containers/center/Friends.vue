@@ -1,18 +1,15 @@
 <template>
-  <div class="message">
-    <Header title="我的消息"/>
+  <div class="friends">
+    <Header title="我的好友"/>
     <template>
       <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="私信" name="first">
+        <el-tab-pane label="关注" name="first">
           <PeopleList class="item"/>
         </el-tab-pane>
-        <el-tab-pane label="评论" name="second">评论</el-tab-pane>
-        <el-tab-pane label="@我" name="third">@我</el-tab-pane>
-        <el-tab-pane label="通知" name="fourth">通知</el-tab-pane>
+        <el-tab-pane label="粉丝" name="second">粉丝</el-tab-pane>
+        <el-tab-pane label="添加好友" name="third">添加好友</el-tab-pane>
       </el-tabs>
     </template>
-  </div>
-</template>
   </div>
 </template>
 
@@ -21,7 +18,7 @@ import Header from "../../components/Header";
 import PeopleList from "../../components/People_list";
 
 export default {
-  name: "Message",
+  name: "Friends",
   data() {
     return {
       activeName: "first"
@@ -45,11 +42,11 @@ export default {
 }
 </style>
 <style lang='less'>
-.message {
+.friends {
   .el-tabs__nav {
     width: 100%;
     .el-tabs__item {
-      width: 25%;
+      width: 33.3%;
       font-size: 14px;
       text-align: center;
     }

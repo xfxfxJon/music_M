@@ -28,6 +28,13 @@ Vue.use(Router)
 import PersonalCenter from '@/containers/center/PersonalCenter'
 import ListenMusic from '@/containers/center/listenMusic'
 import Message from '@/containers/center/Message'
+import Friends from '@/containers/center/Friends'
+import Nearby from '@/containers/center/Nearby'
+import Settings from '@/containers/center/Settings'
+import Shopping from '@/containers/center/Shopping'
+import Skin from '@/containers/center/Skin'
+import Vip from '@/containers/center/Vip'
+
 
 export default new Router({
   linkActiveClass:"active",
@@ -128,6 +135,36 @@ export default new Router({
       path: '/message',
       name: 'Message',
       component: Message
+    },
+    {
+      path: '/friends',
+      name: 'Friends',
+      component: Friends
+    },
+    {
+      path: '/nearby',
+      name: 'Nearby',
+      component: Nearby
+    },
+    {
+      path: '/settings',
+      name: 'Settings',
+      component: Settings
+    },
+    {
+      path: '/shopping',
+      name: 'Shopping',
+      component: Shopping
+    },
+    {
+      path: '/skin',
+      name: 'Skin',
+      component: Skin
+    },
+    {
+      path: '/vip',
+      name: 'Vip',
+      component: Vip
     }
   ]
 })

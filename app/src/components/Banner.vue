@@ -1,6 +1,8 @@
 <template>
   <div>
-    <PersonalCenter v-show="isShowCenter"/>
+    <transition name="showcenter">
+      <PersonalCenter v-show="isShowCenter"/>
+    </transition>
     <div class="shadow" v-show="isShowCenter" @click="isShowCenter = false"></div>
     <div class="nav">
       <img
@@ -93,6 +95,18 @@ export default {
   height: 100%;
   position: absolute;
   z-index: 887;
+}
+[name='showcenter']{
+  position: relative;
+}
+.showcenter-enter-active, .showcenter-leave-active {
+  transition: left .5s;
+}
+.showcenter-enter, .showcenter-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  left: -33%;
+}
+.showcenter-leave, .showcenter-enter-to /* .fade-leave-active below version 2.1.8 */ {
+  left: 0px;
 }
 </style>
 
