@@ -27,6 +27,7 @@ Vue.use(Router)
 // center
 import PersonalCenter from '@/containers/center/PersonalCenter'
 import ListenMusic from '@/containers/center/listenMusic'
+import Message from '@/containers/center/Message'
 
 export default new Router({
   linkActiveClass:"active",
@@ -122,6 +123,11 @@ export default new Router({
       path: '/listenmusic',
       name: 'ListenMusic',
       component: ListenMusic
+    },
+    {
+      path: '/message',
+      name: 'Message',
+      component: Message
     }
   ]
 })

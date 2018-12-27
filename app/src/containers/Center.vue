@@ -9,7 +9,7 @@
     </div>
     <ul>
       <li>
-        <router-link to="/">
+        <router-link to="/message">
           <img src="../assets/images/center_message.png" alt>
           <span>我的消息</span>
         </router-link>
