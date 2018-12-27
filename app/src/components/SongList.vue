@@ -1,31 +1,48 @@
 <template>
     <div class="songList_content">
             <ul class="song_list">
-                <li>
-                    <span class="song_name">可不可以给我你的微信</span>
-                    <span>-</span>
-                    <span class="song_author">Milky</span>
-                </li>
-                <li>
-                    <span class="song_name">wonderfulU(Demo Version)</span>
-                    <span>-</span>
-                    <span class="song_author">AGA</span>
-                </li>
-                <li>
-                    <span class="song_name">即兴</span>
-                    <span>-</span>
-                    <span class="song_author">叫我小咪</span>
-                </li>
-                <li>
-                    <span class="song_name">侧脸</span>
-                    <span>-</span>
-                    <span class="song_author">于果</span>
-                </li>
-                <li>
-                    <span class="song_name">听见下雨的声音</span>
-                    <span>-</span>
-                    <span class="song_author">周杰伦</span>
-                </li>
+                <router-link to='/player'>
+                    <li>
+                        <span class="song_name">可不可以给我你的微信</span>
+                        <span>-</span>
+                        <span class="song_author">Milky</span>
+                    </li>
+                </router-link>
+                <router-link to='/player'>
+                    <li>
+                        <span class="song_name">wonderfulU(Demo Version)</span>
+                        <span>-</span>
+                        <span class="song_author">AGA</span>
+                    </li>
+                </router-link>
+                <router-link to='/player'>      
+                    <li>
+                        <span class="song_name">即兴</span>
+                        <span>-</span>
+                        <span class="song_author">叫我小咪</span>
+                    </li>
+                </router-link>
+                <router-link to='/player'>
+                    <li>
+                        <span class="song_name">即兴</span>
+                        <span>-</span>
+                        <span class="song_author">叫我小咪</span>
+                    </li>
+                </router-link>
+                <router-link to='/player'>
+                    <li>
+                        <span class="song_name">侧脸</span>
+                        <span>-</span>
+                        <span class="song_author">于果</span>
+                    </li>
+                </router-link>
+                <router-link to='/player'>     
+                    <li>
+                        <span class="song_name">听见下雨的声音</span>
+                        <span>-</span>
+                        <span class="song_author">周杰伦</span>
+                    </li>
+                </router-link>
             </ul>
         </div>
 </template>
@@ -53,7 +70,7 @@ export default {
         padding-top:10px;
         text-align: left;
         li{
-           color:rgba(255, 255, 255);
+           color:white;
            padding:10px;
            .iconfont{
                float:right;

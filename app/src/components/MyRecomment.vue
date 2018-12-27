@@ -2,30 +2,42 @@
     <div class="frame">
         <h3>{{title}}</h3>
         <div class="model">
-                <div class="models">
-                    <img src="../assets/images/singer.png" alt="">
-                    <p>用声音，治愈每一个孤独患者</p>
-                </div>
-                <div class="models">
-                    <img src="../assets/images/singer.png" alt="">
-                    <p>用声音，治愈每一个孤独患者</p>
-                </div>
-                <div class="models">
-                    <img src="../assets/images/singer.png" alt="">
-                    <p>用声音，治愈每一个孤独患者</p>
-                </div>
-                <div class="models">
-                    <img src="../assets/images/singer.png" alt="">
-                    <p>用声音，治愈每一个孤独患者</p>
-                </div>
-                <div class="models">
-                    <img src="../assets/images/singer.png" alt="">
-                    <p>用声音，治愈每一个孤独患者</p>
-                </div>
-                <div class="models">
-                    <img src="../assets/images/singer.png" alt="">
-                    <p>用声音，治愈每一个孤独患者</p>
-                </div>
+                <router-link to='/player'>
+                    <div class="models">
+                        <img src="../assets/images/singer.png" alt="">
+                        <p>用声音，治愈每一个孤独患者</p>
+                    </div>
+                </router-link>
+                <router-link to='/player'>
+                    <div class="models">
+                        <img src="../assets/images/singer.png" alt="">
+                        <p>用声音，治愈每一个孤独患者</p>
+                    </div>
+                </router-link>
+                <router-link to='/player'>
+                    <div class="models">
+                        <img src="../assets/images/singer.png" alt="">
+                        <p>用声音，治愈每一个孤独患者</p>
+                    </div>
+                </router-link>
+                <router-link to='/player'>
+                    <div class="models">
+                        <img src="../assets/images/singer.png" alt="">
+                        <p>用声音，治愈每一个孤独患者</p>
+                    </div>
+                </router-link>
+                <router-link to='/player'>
+                    <div class="models">
+                        <img src="../assets/images/singer.png" alt="">
+                        <p>用声音，治愈每一个孤独患者</p>
+                    </div>
+                </router-link>
+                <router-link to='/player'>
+                    <div class="models">
+                        <img src="../assets/images/singer.png" alt="">
+                        <p>用声音，治愈每一个孤独患者</p>
+                    </div>
+                </router-link>
         </div>
     </div>
 </template>
@@ -76,6 +88,7 @@ export default {
             p{
                 font-size: 12px;
                 text-align: left;
+                color:white;
             }
         }
         
