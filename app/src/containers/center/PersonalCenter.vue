@@ -2,7 +2,7 @@
   <div class="personal_center">
     <div class="background">
       <div class="background_top">
-        <i class="iconfont icon-fanhuijiantouxiangqingye"></i>
+        <i class="iconfont icon-fanhuijiantouxiangqingye" @click="goBack"></i>
       </div>
       <img src="../../assets/images/center_author.png" alt>
       <p>音沐音乐</p>
@@ -45,6 +45,9 @@ export default {
   methods: {
     handleClick(tab, event) {
       // console.log(tab, event);
+    },
+    goBack(){
+      this.$router.go(-1);
     }
   },
   components: { PersonalCenterMusic, PersonalCenterDynamic, PersonalCenterMe }

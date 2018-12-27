@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <span>{{title}}</span>
-    <i class="iconfont icon-fanhuijiantouxiangqingye"></i>
+    <i class="iconfont icon-fanhuijiantouxiangqingye" @click="goBack"></i>
   </div>
 </template>
 
@@ -13,7 +13,12 @@ export default {
       type: String,
       required: true
     }
-  }
+  },
+  methods: {
+    goBack(){
+      this.$router.go(-1);
+    }
+  },
 };
 </script>
 
