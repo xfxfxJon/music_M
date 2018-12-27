@@ -50,13 +50,13 @@
           <span>听歌识曲</span>
         </router-link>
       </li>
-      <li>
-          <img src="../assets/images/center_timing.png" alt>
-          <span>定时播放</span>
+      <li @click="showTiming">
+        <img src="../assets/images/center_timing.png" alt>
+        <span>定时播放</span>
       </li>
       <li>
-          <img src="../assets/images/center_night.png" alt>
-          <span>夜间模式</span>
+        <img src="../assets/images/center_night.png" alt>
+        <span>夜间模式</span>
       </li>
       <li>
         <router-link to="/settings">
@@ -68,12 +68,21 @@
   </div>
 </template>
 
+
 <script>
 export default {
   name: "PersonalCenter",
   data() {
-    return {};
-  }
+    return {
+      isShowTiming: false
+    };
+  },
+  methods: {
+    showTiming(){
+      //隐藏侧边栏
+      this.$emit('hideCenter', false);
+    }
+  },
 };
 </script>
 
@@ -121,5 +130,11 @@ ul > li img {
 
 .center_title {
   padding-bottom: 10px;
+}
+
+.timing_container {
+  width: 100%;
+  height: 100%;
+  background: #fff;
 }
 </style>
