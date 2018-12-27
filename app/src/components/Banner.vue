@@ -1,9 +1,14 @@
 <template>
   <div>
     <transition name="showcenter">
-      <PersonalCenter v-show="isShowCenter"/>
+      <PersonalCenter v-show="isShowCenter" @hideCenter="hideCenter"/>
     </transition>
-    <div class="shadow" v-show="isShowCenter" @click="isShowCenter = false"></div>
+    <TimingComponent v-if="isShowTiming" @hideTiming="hideTiming"/>
+    <div
+      class="shadow"
+      v-show="isShowCenter || isShowTiming"
+      @click="isShowCenter = false;isShowTiming = false;"
+    ></div>
     <div class="nav">
       <img
         src="../assets/images/header_list.png"
@@ -33,15 +38,29 @@
 
 <script>
 import PersonalCenter from "../containers/Center";
+import TimingComponent from "../components/Timing_component";
 
 export default {
   name: "Banner",
   data() {
     return {
-      isShowCenter: false
+      isShowCenter: false,
+      isShowTiming: false
     };
   },
-  components: { PersonalCenter }
+  methods: {
+    hideCenter(data) {
+      // console.log(data);
+      this.isShowCenter = false;
+      this.isShowTiming = true;
+    },
+    hideTiming(data){
+      // console.log(data);
+      this.isShowCenter = false;
+      this.isShowTiming = false;
+    }
+  },
+  components: { PersonalCenter, TimingComponent }
 };
 </script>
 
@@ -96,11 +115,12 @@ export default {
   position: absolute;
   z-index: 887;
 }
-[name='showcenter']{
+[name="showcenter"] {
   position: relative;
 }
-.showcenter-enter-active, .showcenter-leave-active {
-  transition: left .5s;
+.showcenter-enter-active,
+.showcenter-leave-active {
+  transition: left 0.5s;
 }
 .showcenter-enter, .showcenter-leave-to /* .fade-leave-active below version 2.1.8 */ {
   left: -33%;
