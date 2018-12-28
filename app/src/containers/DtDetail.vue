@@ -5,7 +5,42 @@
             &nbsp; 
              <span>动态</span>
         </div>
-         <DongtaiComponent />
+        
+        <div class="container" v-if="songData.length > 0 " v-for="(item,index) in songData" :key="index">
+                <div class="header">
+                    <div class="portrait">
+                        <img :src="item.user.avatarUrl" alt="">
+                    </div>
+                    <div class="text">
+                        <p>{{item.user.nickname}}</p>
+                        <p class="time">{{timestampToTime(item.eventTime)}}</p>
+                    </div>
+                    <span class="care">+关注</span>
+                </div>
+                <div class="article-box">
+                    <p class="article">{{item.user.signature}}</p>
+                    <!-- <p class="all-article">全文</p> -->
+                </div>
+                
+                <div class="img-box" v-for="(items,index) in item.pics" :key="index">
+                    <div class="img-item" :class="{'clear-padding': index%3 !== 1}">
+                        <img :src="items.pcRectangleUrl" alt="">
+                    </div> 
+                </div>
+
+                <div class="comment-box">
+                    <i class="iconfont icon-dianzan"></i>
+                    <span>{{item.info.likedCount}}</span>
+                    &nbsp; 
+                    <i class="iconfont icon-pinglun"></i>
+                    <span>{{item.info.commentCount}}</span>
+                    &nbsp; 
+                    <i class="iconfont icon-fenxiang"></i>
+                    <span>{{item.info.shareCount}}</span>
+                </div>
+        </div>
+        <div v-else>正在加载数据...</div>
+
          <div class="zan-box">
              <p>赞:</p>
              <div class="head-box">
