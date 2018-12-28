@@ -62,7 +62,7 @@ export default {
   .background {
     height: 40%;
     color: #fff;
-    background: url("../../assets/images/personal_center_bg.png") no-repeat;
+    background: url("src/assets/images/personal_center_bg.png") no-repeat;
     background-size: cover;
     .background_top {
       i {

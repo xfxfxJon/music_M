@@ -29,7 +29,7 @@ html{font-size:16px;}
 .clear{clear:both;height:0;font-size:0;line-height:0;visibility:hidden; overflow:hidden;}
 .fl{float:left;}
 .fr{float:right;}
-body{ margin:0 auto;max-width:640px; min-width:320px;background-color: #fff;color:#555;height:100%;}
+body{ margin:0 auto;background-color: #fff;color:#555;height:100%;}
 a{color: #555;text-decoration: none}
 .clearfix{overflow: hidden;clear: both;}
 .iconfont{color:#e41f7f;font-size:20px;}

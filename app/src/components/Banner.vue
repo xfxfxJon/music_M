@@ -68,7 +68,9 @@ export default {
 .nav {
   width: 100%;
   height: 64px;
-  background-image: url("../assets/images/top.png");
+  background: url("src/assets/images/top.png") no-repeat;
+  background-size: cover;
+  position: relative;
 }
 // .left_ico{
 //     position: absolute;

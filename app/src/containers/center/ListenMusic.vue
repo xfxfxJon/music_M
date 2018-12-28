@@ -44,15 +44,17 @@ export default {
     .center {
       height: 307px;
       width: 300px;
-      background: url("../../assets/images/listen_music_bg.png") no-repeat;
+      background: url('src/assets/images/listen_music_bg.png') no-repeat;
       background-size: cover;
+      margin: 0 auto;
+      position: relative;
       img {
         width: 100px;
         position: absolute;
         top: 50%;
         left: 50%;
         margin-top: -38px;
-        margin-left: -52px;
+        margin-left: -55px;
         animation: circle_center 3s linear infinite;
       }
     }

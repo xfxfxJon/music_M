@@ -115,7 +115,7 @@ ul > li {
 
 ul > li img {
   width: 15px;
-  vertical-align: bottom;
+  /* vertical-align: bottom; */
   position: relative;
   top: -3px;
 }

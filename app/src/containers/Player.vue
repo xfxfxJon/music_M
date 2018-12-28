@@ -51,7 +51,7 @@ export default {
     .container{
         width:100%;
         height:100%; 
-        background: url("../assets/images/player-bg.png") ;
+        background: url("src/assets/images/player-bg.png") ;
         background-size:100%;
         background-repeat: no-repeat;
         padding-top:10px;
@@ -87,7 +87,7 @@ export default {
         width:80%;
         height:288px;
         margin:20px auto;
-        background: url("../assets/images/player-box.png");
+        background: url("src/assets/images/player-box.png");
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
