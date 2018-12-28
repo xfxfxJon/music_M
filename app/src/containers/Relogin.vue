@@ -10,22 +10,23 @@
         <ul class="formlist">
             <li>
                 <i class="iconfont icon-shouji"></i>
-                <input type="text" placeholder="请输入手机号码" >
+                <input type="text" placeholder="请输入手机号码" v-model="phone">
             </li>
               <li>
                 <i class="iconfont icon-mima"></i>
-                <input type="password" placeholder="密码">
+                <input type="password" placeholder="密码" v-model="password">
             </li>
         </ul>
-        <router-link to="/">
-          <button class="btn">登录</button>
-        </router-link>
+        <!-- <router-link  to="/"> -->
+          <button class="btn" @click="clickHandler">登录</button>
+        <!-- </router-link> -->
         <div class="forget">
           <a href="#">忘记密码?</a>
           <router-link to="/register">
             <a href="#">立即注册</a>
           </router-link>
         </div>
+        <p v-if="userdata.msg">{{userdata.msg}}</p>
         <p class="orther">其他登录方式</p>
         <ul class="list">
             <li class="item">
@@ -58,7 +59,34 @@ export default {
   name: 'Relogin',
   data () {
     return {
-      
+      phone:"",
+      password:"",
+      userdata:{}
+    }
+  },
+  methods:{
+    clickHandler(){
+      if(this.phone && this.password){
+        this.$axios.get("http://localhost:3000/login/cellphone",{
+            params:{
+                    phone:this.phone,
+                    password:this.password
+            }
+        })
+        .then(res =>{
+          console.log(res)
+          this.userdata = res.data
+          let data = {"userId":res.data.profile.userId,"nickname":res.data.profile.nickname}
+          let userinfo=JSON.stringify(data);
+          localStorage.setItem("userinfo",userinfo)
+          if(res.data.code == 200){
+             this.$router.push({
+              name: 'Yinmu'  
+            })
+          }
+        })
+        .catch(error =>new Error(error)) 
+      } 
     }
   }
 }

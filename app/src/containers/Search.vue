@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="search-box">
         <div class="header">
             <i class="iconfont icon-fanhuijiantouxiangqingye" @click="$router.back(-1)"></i>
             <SearchInput class="search"/>
@@ -12,7 +12,7 @@
                 <li>生僻字</li>
                 <li>浪子回头</li>
                 <li>林忆莲</li>
-                <li>吴亦凡</li>
+               
             </ul>
         </div>
          <PlaySongComponent />
@@ -67,5 +67,9 @@ export default {
         background-color: #f5f5f5;
         border-radius: 20px;
         margin:0 10px 10px 0;
+    }
+    .search-box{
+        position: relative;
+
     }
 </style>
