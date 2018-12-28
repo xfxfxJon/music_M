@@ -1,23 +1,53 @@
 <template>
     <div>
-        <h3 class="top">音沐音乐官方榜</h3>
-        <div class="dt_list">
-            <img src="../assets/images/bang.png" alt="">
-            <router-link to="/biglist">
-                <ul>
-                <li>1.圣诞夜 - 朱星杰</li>
-                <li>2.我要给世界最悠长的湿吻 - 蔡健雅</li>
-                <li>3.雾霭有时晴 - 河图/音频怪物</li>
-            </ul>
-            </router-link>
-        </div>
-        
+        <h3 class="top">{{title}}</h3>
+        <router-link to="/biglist">
+            <div class="dt_list">
+                <img :src="data.coverImgUrl" alt="">
+                    <ul>
+                    <li v-for="(item,index) in tracks " :key='index'>{{ index+1+ "."+item.name }} - {{ item.ar[0].name }}</li>
+                    </ul> 
+            </div>
+        </router-link>
     </div>
 </template>
 
 <script>
 export default {
-    name:"TopList"
+    name:"TopList",
+    data(){
+        return{
+            data:{},
+            tracks:{},
+        }
+    },
+    props:{
+        title:'',
+        params:{
+            type:Object,
+            require:true
+        },
+        url:{
+            type:String,
+            require:true
+        }
+    },
+    mounted() {
+        this.$axios.get(this.url,{
+            params:this.params
+        })
+        .then(data => {
+            // console.log(data.data)
+            this.data=data.data.playlist
+            // data.data.playlist.tracks.length=3
+            this.tracks=data.data.playlist.tracks.slice(0,3)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    },
+
+
 }
 </script>
 

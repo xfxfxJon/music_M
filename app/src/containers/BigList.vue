@@ -1,6 +1,7 @@
 <template>
-    <div>
+    <div class="BigList">
         <img src="../assets/images/hot.png" alt="">
+        {{$route.params.imgurl}}
         <i class="ico iconfont icon-fanhuijiantouxiangqingye" @click="$router.back(-1)"></i>
         <PlayAll />
         <Sing />
@@ -16,7 +17,7 @@ export default {
     name:"BigList",
     data(){
         return{
-           
+          
         }
     },
     components:{
