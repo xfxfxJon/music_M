@@ -1,10 +1,15 @@
 <template>
   <div class="center_container">
     <div class="center_top">
-      <router-link to="/personalCenter">
-        <img src="../assets/images/center_author.png" alt>
+      <router-link to="/personalCenter" v-if="login">
+        <img :src="data.profile.avatarUrl" alt>
         <div class="center_lv">LV.10</div>
-        <p class="center_title">音沐音乐</p>
+        <p class="center_title">{{data.profile.nickname}}</p>
+      </router-link>
+      <router-link to="/login" v-else>
+        <div class="login">
+          <div class="center">登录</div>
+        </div>
       </router-link>
     </div>
     <ul>
@@ -74,25 +79,55 @@ export default {
   name: "PersonalCenter",
   data() {
     return {
+      data: {},
+      login: false,
       isShowTiming: false
     };
   },
-  methods: {
-    showTiming(){
-      //隐藏侧边栏
-      this.$emit('hideCenter', false);
+  mounted() {
+    let userinfo = window.localStorage.getItem("userinfo");
+    if (userinfo) {
+      //请求数据
+      let uid = JSON.parse(userinfo).userId;
+      this.$axios
+        .get("http://localhost:3000/user/detail?uid=" + uid)
+        .then(res => {
+          // console.log(res);
+          this.data = res.data;
+          this.login = true;
+        });
+    } else {
+      this.login = false;
     }
   },
+  methods: {
+    showTiming() {
+      //隐藏侧边栏
+      this.$emit("hideCenter", false);
+    }
+  }
 };
 </script>
 
-<style scoped>
+<style lang='less' scoped>
 .center_container {
   position: absolute;
   z-index: 888;
   height: 100%;
   width: 33%;
   background: #fff;
+}
+
+.login {
+  height: 100px;
+  .center {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    position: relative;
+    top: 40px;
+  }
 }
 
 .center_top {
