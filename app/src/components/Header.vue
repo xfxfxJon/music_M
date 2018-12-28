@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header_component">
     <span>{{title}}</span>
     <i class="iconfont icon-fanhuijiantouxiangqingye" @click="goBack"></i>
   </div>
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="less" scope>
-.header {
+.header_component {
   font-size: 20px;
   height: 60px;
   padding-left: 20px;

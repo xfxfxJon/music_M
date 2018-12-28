@@ -1,11 +1,7 @@
 <template>
     <div>
         <div class="header">
-<<<<<<< HEAD
-            <i class="iconfont icon-fanhuijiantouxiangqingye" ></i>
-=======
             <i class="iconfont icon-fanhuijiantouxiangqingye" @click="$router.back(-1)"></i>
->>>>>>> b01b35f40e7b2cfd7e78c0c56627b20b8f2f7136
             <SearchInput class="search"/>
         </div>
         <div class="content">
