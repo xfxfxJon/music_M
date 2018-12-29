@@ -3,7 +3,13 @@
         <input class="myinput" type="text" v-model="searchData"  >
         <button @click="clickHandler" class="btn">搜索</button>
         <ul class="search-song-list" v-if="songData.length>0">
-            <li class="search-song-item" v-for="(item,index) in songData" :key="index">
+          <router-link
+           :to="{name:'Player',
+           params:{musicId:item.id,name:item.name,auther:item.artists.name}}"
+           v-for="(item,index) in songData" 
+           :key="index"
+           >
+            <li class="search-song-item" >
                 <div class="search-song-name">
                     <p>{{setMusicTitle(item.name)}}</p>
                     <p>
@@ -16,6 +22,7 @@
                     <i class="iconfont icon-gengduo-copy" @click="iconClickHandler"></i>
                 </div>
             </li>
+          </router-link>
         </ul>
         <div class="bg-more-box" v-show="flag" @click="iconClickHandler">
             <ul class="more-box">
