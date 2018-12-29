@@ -1,11 +1,11 @@
 <template>
     <div class="BigList">
         <img src="../assets/images/hot.png" alt="">
-        {{$route.params.imgurl}}
-        <i class="ico iconfont icon-fanhuijiantouxiangqingye" @click="$router.back(-1)"></i>
+        <i class="ico iconfont icon-fanhuijiantouxiangqingye" @click="$router.go(-1)"></i>
         <PlayAll />
+        {{this.$route.params.topid}}
         <Sing />
-        <Sing />
+        
     </div>
 </template>
 
@@ -17,13 +17,24 @@ export default {
     name:"BigList",
     data(){
         return{
-          
+          list:{}
         }
     },
     components:{
         PlayAll,
         Sing
-    }
+    },
+    mounted() {
+        this.$axios.get('http://localhost:3000/toplist',{
+            params:{
+                id:this.$route.params.topid
+            }
+        }).then(res =>{
+            this.list = res.data.list
+        }).catch(res =>{
+            console.log(error)
+        })
+    },
 }
 </script>
 

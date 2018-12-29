@@ -1,14 +1,16 @@
 <template>
     <div>
         <h3 class="top">{{title}}</h3>
-        <router-link to="/biglist">
-            <div class="dt_list">
-                <img :src="data.coverImgUrl" alt="">
-                    <ul>
-                    <li v-for="(item,index) in tracks " :key='index'>{{ index+1+ "."+item.name }} - {{ item.ar[0].name }}</li>
-                    </ul> 
-            </div>
-        </router-link>
+        
+        <div class="dt_list" >
+            <router-link :to="{name:'BigList',params:{topid:data.id}}">
+            <img :src="data.coverImgUrl" alt="">
+                <ul>
+                <li v-for="(item,index) in tracks " :key='index'>{{ index+1+ "."+item.name }} - {{ item.ar[0].name }}</li>
+                </ul> 
+            </router-link>
+        </div>
+    
     </div>
 </template>
 
@@ -20,6 +22,9 @@ export default {
             data:{},
             tracks:{},
         }
+    },
+    methods: {
+        
     },
     props:{
         title:'',

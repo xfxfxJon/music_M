@@ -2,8 +2,10 @@
     <div class="frame">
         <h3>推荐</h3>
         <div class="model">
-            <router-link to='/biglist'>
-                <div class="models" v-for="(item,index) in result" :key='index' >
+            <router-link  
+            v-for="(item,index) in result" 
+            :key='index' :to="{name:'BigList',params:{id:'item.id'}}">
+                <div class="models" >
                     <img :src="item.picUrl" alt="">
                     <p>{{item.name}}</p>
                 </div>
@@ -35,8 +37,18 @@ export default {
         params:this.params
     })
     .then(data => {
-        // console.log(data.data)
+        console.log(data.data)
         this.result = data.data.result.slice(0,6)
+    })
+    .catch(error => {
+        console.log(error)
+    })
+// -------------------------------
+        this.$axios.get('http://localhost:3000/personalized/newsong',{
+        params:this.params
+    })
+    .then(res => {
+        console.log(res.data)
     })
     .catch(error => {
         console.log(error)

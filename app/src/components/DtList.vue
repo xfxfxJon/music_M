@@ -3,8 +3,8 @@
         <div class="model">
             <router-link to="/player">
                 <div class="models" v-for="(item,index) in djRadios" :key='index'>
-                    <img :src="item.picUrl" alt="">
-                    <p>{{item.name}}</p>
+                    <img :src="item.dj.avatarUrl" alt="">
+                    <p>{{item.desc}}</p>
                 </div>
             </router-link>
            
@@ -61,20 +61,20 @@ export default {
             text-align: center;
             width: 47%;
             float: left;
-            margin: 0 1.4%;
+            margin: 5px 1.4%;
             img{
                 width: 100%;
                 float: left;
             }
             p{
-                // font-size: 12px;
+                font-size: 0.351111rem;
                 width: 100%;
                 height: 0.9rem;
                 text-align: left;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 display: -webkit-box;
-                -webkit-line-clamp: 3;
+                -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
             }
         }
