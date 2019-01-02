@@ -34,71 +34,29 @@
                     <i class="iconfont">&#xe63c;</i>
                 </li>
             </ul> -->
-            <ul class="song_list">
-                <router-link to='/player'>
-                    <li>
-                        <span class="song_name">可不可以给我你的微信</span>
-                        <span>-</span>
-                        <span class="song_author">Milky</span>
-                        <i class="iconfont">&#xe63c;</i>
-                    </li>
-                </router-link>
-                <router-link to='/player'>
-                    <li>
-                        <span class="song_name">wonderfulU(Demo Version)</span>
-                        <span>-</span>
-                        <span class="song_author">AGA</span>
-                        <i class="iconfont">&#xe63c;</i>
-                    </li>
-                </router-link>
-                <router-link to='/player'>      
-                    <li>
-                        <span class="song_name">即兴</span>
-                        <span>-</span>
-                        <span class="song_author">叫我小咪</span>
-                        <i class="iconfont">&#xe63c;</i>
-                    </li>
-                </router-link>
-                <router-link to='/player'>
-                    <li>
-                        <span class="song_name">即兴</span>
-                        <span>-</span>
-                        <span class="song_author">叫我小咪</span>
-                        <i class="iconfont">&#xe63c;</i>
-                    </li>
-                </router-link>
-                <router-link to='/player'>
-                    <li>
-                        <span class="song_name">侧脸</span>
-                        <span>-</span>
-                        <span class="song_author">于果</span>
-                        <i class="iconfont">&#xe63c;</i>
-                    </li>
-                </router-link>
-                <router-link to='/player'>     
-                    <li>
-                        <span class="song_name">听见下雨的声音</span>
-                        <span>-</span>
-                        <span class="song_author">周杰伦</span>
-                        <i class="iconfont">&#xe63c;</i>
-                    </li>
-                </router-link>
-            </ul>
+            <LikeSongList :url="'http://localhost:3000/song/detail'" :params="LikeParams"/>  
         </div>
     </div>
 </template>
 <script>
 import Return from '../components/Return'
+import LikeSongList from '../components/LikeSongList'
+import SongList from '../components/SongList'
 export default {
     name:'MyLike',
     data(){
         return{
-
+            LikeParams:{
+                ids:347230
+            }
         }
     },
     components:{
-        Return
-    }
+        Return,
+        LikeSongList
+    },
+    
+    
 }
 </script>
 

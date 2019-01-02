@@ -2,40 +2,10 @@
     <div class="frame">
         <h3>{{title}}</h3>
         <div class="model">
-                <router-link to='/player'>
+                <router-link to='/player' v-for="(item,index) in stadio" :key='index'>
                     <div class="models">
-                        <img src="../assets/images/singer.png" alt="">
-                        <p>用声音，治愈每一个孤独患者</p>
-                    </div>
-                </router-link>
-                <router-link to='/player'>
-                    <div class="models">
-                        <img src="../assets/images/singer.png" alt="">
-                        <p>用声音，治愈每一个孤独患者</p>
-                    </div>
-                </router-link>
-                <router-link to='/player'>
-                    <div class="models">
-                        <img src="../assets/images/singer.png" alt="">
-                        <p>用声音，治愈每一个孤独患者</p>
-                    </div>
-                </router-link>
-                <router-link to='/player'>
-                    <div class="models">
-                        <img src="../assets/images/singer.png" alt="">
-                        <p>用声音，治愈每一个孤独患者</p>
-                    </div>
-                </router-link>
-                <router-link to='/player'>
-                    <div class="models">
-                        <img src="../assets/images/singer.png" alt="">
-                        <p>用声音，治愈每一个孤独患者</p>
-                    </div>
-                </router-link>
-                <router-link to='/player'>
-                    <div class="models">
-                        <img src="../assets/images/singer.png" alt="">
-                        <p>用声音，治愈每一个孤独患者</p>
+                        <img :src='imgUrl' alt="">
+                        <p>{{item.name}}</p>
                     </div>
                 </router-link>
         </div>
@@ -47,14 +17,32 @@ export default {
     name:"MyRecomment",
     data(){
         return{
-           
+           stadio:[],
+           imgUrl:''
         }
     },
     props:{
         title:{
             type:String,
             default:'推荐'
+        },
+        url:{
+            type: String,
+            required: true
         }
+    },
+    mounted(){
+        this.$axios
+        .get(this.url)
+        .then(data => {
+            console.log(data.data.result)
+            console.log(data.data.result[0].picUrl)
+            this.stadio = data.data.result
+            this.imgUrl = data.data.result[0].picUrl
+        })
+        .catch(error => {
+            console.log(error);
+        });
     }
 }
 </script>

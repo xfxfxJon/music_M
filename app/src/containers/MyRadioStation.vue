@@ -2,7 +2,7 @@
     <div>
         <Return label='我的电台'/>
         <NoData2/>
-        <MyRecomment v-bind:title="title"/>
+        <MyRecomment v-bind:title="title" :url="'http://localhost:3000/personalized/djprogram'" />
     </div>
 </template>
 <script>

@@ -3,7 +3,7 @@
         <Return label='本地音乐'/>
         <Mymusictabs :value='value' @getIndex='getCurrentIndex'>
             <Mymusictab label='本地播放' index='1'>
-                <SongList/>
+                <SongList :url="'http://localhost:3000/song/detail'" :params="LocalParams"/>
             </Mymusictab>
             <Mymusictab label='我的下载' index='2'>
                 <NoData/>
@@ -19,7 +19,10 @@ export default {
     name:'LocalMusic',
     data(){
         return{
-            value:1
+            value:1,
+            LocalParams:{
+                ids:74625
+            }
         }
     },
     methods:{

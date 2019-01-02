@@ -81,9 +81,9 @@ export default {
             params: this.params
         })
         .then(data => {
-            // console.log(data.data)
-            // console.log(data.data.songs[0].name);
-            // console.log(data.data.songs[0].ar[0].name)
+            console.log(data.data)
+            console.log(data.data.songs[0].name);
+            console.log(data.data.songs[0].ar[0].name)
             this.songs = data.data.songs;
         })
         .catch(error => {
