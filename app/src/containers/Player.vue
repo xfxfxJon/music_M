@@ -8,10 +8,13 @@
            </div>
            <i class="iconfont icon-fenxiang"></i>
        </div>
+       <Lrc />
        <div class="content">
            <div class="singer-img-box">
                <img :src="songDetailData.songs[0].al.picUrl" alt="">
            </div>
+           <LRC :musicId="this.$route.params.musicId"/>
+            
           <div class="icon">
              <i class="iconfont icon-shoucang"></i>
              <i class="iconfont icon-xiazai"></i>
@@ -31,6 +34,7 @@
               <i class="iconfont icon-xiangyou"></i>
               <i class="iconfont icon-bofangliebiao"></i>
           </div>
+          
        </div>
        <div class="song">
          <audio v-if="songData" :src="songData.url" controls ref="myPlayer" autoplay preload id="music1" hidden></audio>
@@ -39,7 +43,7 @@
 </template>
 
 <script>
-
+import LRC from "../components/LRC";
 export default {
     name:"Player",
     data(){
@@ -48,6 +52,9 @@ export default {
             clSwitch:"icon-zanting",
             songDetailData:{}
         }
+    },
+    components:{
+        LRC
     },
     mounted(){
         if(this.$route.params.musicId){
@@ -154,7 +161,7 @@ export default {
         left:11px;
     }
     .icon{
-        margin:120px 0 10px;
+        margin:20px 0 10px;
         display: flex;
     }
     .icon i,.play-icon i{
