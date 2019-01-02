@@ -3,14 +3,14 @@
        <div class="header">
            <i class="iconfont icon-fanhuijiantouxiangqingye" @click="$router.back(-1)"></i>
            <div class="songinfo">
-                <p>{{this.$route.params.name}}</p>
-                <p>{{this.$route.params.auther}}</p>
+                <p>{{setMusicTitle(songDetailData.songs[0].name)}}</p>
+                <p>{{songDetailData.songs[0].ar[0].name}}</p>
            </div>
            <i class="iconfont icon-fenxiang"></i>
        </div>
        <div class="content">
            <div class="singer-img-box">
-               <img src="../assets/images/singer-xzq.png" alt="">
+               <img :src="songDetailData.songs[0].al.picUrl" alt="">
            </div>
           <div class="icon">
              <i class="iconfont icon-shoucang"></i>
@@ -45,7 +45,8 @@ export default {
     data(){
         return{
             songData:{},
-            clSwitch:"icon-zanting"
+            clSwitch:"icon-zanting",
+            songDetailData:{}
         }
     },
     mounted(){
@@ -58,6 +59,19 @@ export default {
             .then(res=>{
                 console.log(res)
                 this.songData = res.data.data[0]
+            })
+            .catch(error=>{
+                console.log(error)
+            })
+
+             this.$axios.get("http://localhost:3000/song/detail?",{
+                params:{
+                    ids:this.$route.params.musicId
+                }
+            })
+            .then(res=>{
+                console.log(res)
+                this.songDetailData = res.data
             })
             .catch(error=>{
                 console.log(error)
@@ -77,7 +91,13 @@ export default {
                 }
             // }
            
-        }
+        },
+         setMusicTitle(title){
+          if(title.length >8 ){
+              return title.substring(0,12)+"..."
+          }
+          return title;
+      }
     }
 }
 </script>
@@ -128,10 +148,10 @@ export default {
         position: relative;
     }
     .singer-img-box img{
-        width:92%;
+        width:92.5%;
         position: absolute;
         top:12px;
-        left:12px;
+        left:11px;
     }
     .icon{
         margin:120px 0 10px;
@@ -168,6 +188,7 @@ export default {
     }
     .songinfo p:first-child{
         font-size: 18px;
+        width:200px;
     }
 </style>
 
