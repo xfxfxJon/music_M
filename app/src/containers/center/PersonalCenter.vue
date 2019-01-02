@@ -4,8 +4,12 @@
       <div class="background_top">
         <i class="iconfont icon-fanhuijiantouxiangqingye" @click="goBack"></i>
       </div>
-      <img src="../../assets/images/center_author.png" alt>
-      <p>音沐音乐</p>
+      <template v-if="data.profile">
+        <img :src="data.profile.avatarUrl" alt>
+      </template>
+      <template v-if="data.profile">
+        <p>{{data.profile.nickname}}</p>
+      </template>
       <p>
         关注
         <span>100</span>
@@ -39,14 +43,31 @@ export default {
   name: "PersonalCenter",
   data() {
     return {
+      data: {},
       activeName: "first"
     };
+  },
+  mounted() {
+    let userinfo = window.localStorage.getItem("userinfo");
+    if (userinfo) {
+      //请求数据
+      let uid = JSON.parse(userinfo).userId;
+      // console.log(uid);
+      this.$axios
+        .get("http://localhost:3000/user/detail?uid=" + uid)
+        .then(res => {
+          // console.log(res);
+          this.data = res.data;
+        });
+    } else {
+      this.$router.push("/login");
+    }
   },
   methods: {
     handleClick(tab, event) {
       // console.log(tab, event);
     },
-    goBack(){
+    goBack() {
       this.$router.go(-1);
     }
   },
@@ -62,7 +83,7 @@ export default {
   .background {
     height: 40%;
     color: #fff;
-    background: url("../../assets/images/personal_center_bg.png") no-repeat;
+    background: url("src/assets/images/personal_center_bg.png") no-repeat;
     background-size: cover;
     .background_top {
       i {

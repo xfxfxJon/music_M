@@ -2,10 +2,11 @@
     <div>
         <router-link to="/player">
             <div class="dt_list">
-            <p class="num">1</p>
+            <!-- <p class="num">1</p> -->
             <ul>
-                <li>小宇</li>
-                <li><span>SQ</span>网瘾少女大叽叽</li>
+                <li>{{list.name}}</li>
+                <!-- <li><span>SQ</span>网瘾少女大叽叽</li> -->
+                <!-- {{this.$route.params.topid}} -->
             </ul>
             <span>···</span>
             </div>
@@ -18,9 +19,21 @@ export default {
     name:"Sing",
     data(){
         return{
-            
+           list:[] 
         }
-    }
+    },
+     mounted() {
+        this.$axios.get('http://localhost:3000/toplist',{
+            params:{
+                idx:this.$route.params.topid
+            }
+        }).then(res =>{
+            console.log(res.data)
+            this.list = res.data.list
+        }).catch(error =>{
+            console.log(error)
+        })
+    },
 }
 </script>
 

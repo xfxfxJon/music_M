@@ -1,7 +1,7 @@
 <template>
     <swiper :options='swiperOption'> 
-        <swiper-slide v-for='(banner,index) in banners' :key='index'>
-            <img class="pics" :src="banner" alt="">
+        <swiper-slide v-for='(item,index) in banners' :key='index'>
+            <img class="pics" :src="item.picUrl" alt="">
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -12,7 +12,7 @@ export default {
     name:"Carousel",
     data(){
         return{
-            
+            banners:[],
             swiperOption: {
                 autoplay: true,
                 pagination: {
@@ -22,19 +22,35 @@ export default {
             }
         }
     },
-    props: {
-    banners: {
-      type: Array,
-      default: function() {
-        return [];
-      }
-    }
-  }
+    props:{
+        params:{
+            type:Object,
+            require:true
+        },
+        url:{
+            type:String,
+            require:true
+        }
+    },
+    mounted() {
+        this.$axios.get(this.url,{
+            params:this.params
+        })
+        .then(data => {
+            console.log(data.data)
+            this.banners=data.data.banners
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    },
+
 }
 </script>
 
 <style lang="less" scoped>
 .pics{
     width: 100%;
+    height: 150px;
 }
 </style>

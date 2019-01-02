@@ -3,8 +3,8 @@
        <div class="header">
            <i class="iconfont icon-fanhuijiantouxiangqingye" @click="$router.back(-1)"></i>
            <div class="songinfo">
-                <p>演员</p>
-                <p>薛之谦</p>
+                <p>{{this.$route.params.name}}</p>
+                <p>{{this.$route.params.auther}}</p>
            </div>
            <i class="iconfont icon-fenxiang"></i>
        </div>
@@ -27,11 +27,14 @@
           <div class="play-icon">
               <i class="iconfont icon-danquxunhuan"></i>
               <i class="iconfont icon-xiangzuo"></i>
-              <i class="iconfont icon-play"></i>
+              <i class="iconfont" :class="clSwitch" @click="bzSwitch"></i>
               <i class="iconfont icon-xiangyou"></i>
               <i class="iconfont icon-bofangliebiao"></i>
           </div>
        </div>
+       <div class="song">
+         <audio v-if="songData" :src="songData.url" controls ref="myPlayer" autoplay preload id="music1" hidden></audio>
+       </div> 
     </div>
 </template>
 
@@ -41,9 +44,41 @@ export default {
     name:"Player",
     data(){
         return{
-
+            songData:{},
+            clSwitch:"icon-zanting"
         }
-    }  
+    },
+    mounted(){
+        if(this.$route.params.musicId){
+            this.$axios.get("http://localhost:3000/music/url",{
+                params:{
+                    id:this.$route.params.musicId
+                }
+            })
+            .then(res=>{
+                console.log(res)
+                this.songData = res.data.data[0]
+            })
+            .catch(error=>{
+                console.log(error)
+            })
+        }
+    },
+    methods:{
+        bzSwitch(){
+            // if(this.$refs.myPlayer !== null){
+            //     alert(audio.paused);
+                if(this.$refs.myPlayer.paused){                 
+                    this.$refs.myPlayer.play(); 
+                    this.clSwitch = "icon-zanting" 
+                }else{
+                this.$refs.myPlayer.pause();
+                 this.clSwitch = "icon-play" 
+                }
+            // }
+           
+        }
+    }
 }
 </script>
 
@@ -51,7 +86,7 @@ export default {
     .container{
         width:100%;
         height:100%; 
-        background: url("../assets/images/player-bg.png") ;
+        background: url("src/assets/images/player-bg.png") ;
         background-size:100%;
         background-repeat: no-repeat;
         padding-top:10px;
@@ -87,7 +122,7 @@ export default {
         width:80%;
         height:288px;
         margin:20px auto;
-        background: url("../assets/images/player-box.png");
+        background: url("src/assets/images/player-box.png");
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
@@ -106,7 +141,7 @@ export default {
         flex: 1;
         font-size:28px;
         text-align: center;
-        // color: white;
+        color: white;
     }
     .play{
         text-align: center;
@@ -128,8 +163,11 @@ export default {
         line-height: 60px;
         margin-top:10px;
     }
-    .icon-play{
-        font-size: 60px !important;
+    .icon-zanting , .icon-play{
+        font-size: 50px !important;
+    }
+    .songinfo p:first-child{
+        font-size: 18px;
     }
 </style>
 

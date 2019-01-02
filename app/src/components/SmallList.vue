@@ -2,12 +2,12 @@
     <div>
         <div>
             <router-link to="/biglist">
-                <div class="dt_list">
-                <img src="../assets/images/music_header.png" alt="">
+                <div class="dt_list" v-for="(item,index) in playlists" :key='index' >
+                <img :src="item.coverImgUrl" alt="">
                 <ul>
-                    <li>[小酒馆]剑与魔法·旅途中的休憩时光</li>
-                    <li>by 花嫁赫萝</li>
-                    <li>献给每一位离家的游人、荆棘路中的求道者、远行于荒野之上的冒险家</li>
+                    <li>{{item.name}}</li>
+                    <li>by {{item.creator.nickname}}</li>
+                    <li>{{item.copywriter}}</li>
                 </ul>
             </div>
             </router-link>
@@ -17,7 +17,34 @@
 
 <script>
 export default {
-    name:"SmallList"
+    name:"SmallList",
+    data(){
+        return{
+           playlists:[]
+        }
+    },
+    props:{
+        params:{
+            type:Object,
+            require:true
+        },
+        url:{
+            type:String,
+            require:true
+        }
+    },
+    mounted() {
+    this.$axios.get(this.url,{
+        params:this.params
+    })
+    .then(data => {
+        console.log(data.data)
+        this.playlists=data.data.playlists
+    })
+    .catch(error => {
+        console.log(error)
+    })
+    },
 }
 </script>
 

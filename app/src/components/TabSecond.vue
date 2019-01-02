@@ -3,11 +3,11 @@
         <tabs :value='value' @getIndex="getCurrentIndex">
             <tab label='电台分类' index='1'>
                 <!-- <DtFont />  模仿网易云 -->
-                <DtList />
-                <DtList />
+                <!-- <DtList :url="'http://localhost:3000/dj/recommend'" /> -->
+                <DtList :url="'http://localhost:3000/dj/recommend/type?type=2'" />
             </tab>
             <tab label='电台排行' index='2'>
-                <DtTop />
+                <DtTop :url="'http://localhost:3000/personalized/djprogram'" />
             </tab>
         </tabs>
     </div>

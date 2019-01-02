@@ -2,24 +2,12 @@
     <div class="frame">
         <h3>推荐</h3>
         <div class="model">
-            <router-link to='/biglist'>
-                <div class="models">
-                    <img src="../assets/images/singer.png" alt="">
-                    <p>用声音，治愈每一个孤独患者</p>
-                </div>
-            </router-link>
-
-            <router-link to='/biglist'>
-                <div class="models">
-                    <img src="../assets/images/singer.png" alt="">
-                    <p>用声音，治愈每一个孤独患者</p>
-                </div>
-            </router-link>
-
-            <router-link to='/biglist'>
-                <div class="models">
-                    <img src="../assets/images/singer.png" alt="">
-                    <p>用声音，治愈每一个孤独患者</p>
+            <router-link  
+            v-for="(item,index) in result" 
+            :key='index' :to="{name:'BigList',params:{id:'item.id'}}">
+                <div class="models" >
+                    <img :src="item.picUrl" alt="">
+                    <p>{{item.name}}</p>
                 </div>
             </router-link>
         </div>
@@ -31,9 +19,41 @@ export default {
     name:"Frame",
     data(){
         return{
-           
+           result:[]
         }
-    }
+    },
+    props:{
+        params:{
+            type:Object,
+            require:true
+        },
+        url:{
+            type:String,
+            require:true
+        }
+    },
+    mounted() {
+    this.$axios.get(this.url,{
+        params:this.params
+    })
+    .then(data => {
+        console.log(data.data)
+        this.result = data.data.result.slice(0,6)
+    })
+    .catch(error => {
+        console.log(error)
+    })
+// -------------------------------
+        this.$axios.get('http://localhost:3000/personalized/newsong',{
+        params:this.params
+    })
+    .then(res => {
+        console.log(res.data)
+    })
+    .catch(error => {
+        console.log(error)
+    })
+    },
 }
 </script>
 
@@ -62,6 +82,13 @@ export default {
             p{
                 font-size: 12px;
                 text-align: left;
+                width: 100%;
+                height: 0.9rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
             }
         }
         

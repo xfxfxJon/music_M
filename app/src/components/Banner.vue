@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="banner">
     <transition name="showcenter">
       <PersonalCenter v-show="isShowCenter" @hideCenter="hideCenter"/>
     </transition>
@@ -65,10 +65,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.banner{
+  
+}
 .nav {
   width: 100%;
   height: 64px;
-  background-image: url("../assets/images/top.png");
+  background: url("src/assets/images/top.png") no-repeat;
+  background-size: cover;
 }
 // .left_ico{
 //     position: absolute;

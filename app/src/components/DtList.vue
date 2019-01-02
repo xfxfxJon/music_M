@@ -2,24 +2,46 @@
     <div class="frame">
         <div class="model">
             <router-link to="/player">
-                <div class="models">
-                    <img src="../assets/images/boy.png" alt="">
-                    <p>声控特辑|性感男声 开口即心动</p>
+                <div class="models" v-for="(item,index) in djRadios" :key='index'>
+                    <img :src="item.dj.avatarUrl" alt="">
+                    <p>{{item.desc}}</p>
                 </div>
             </router-link>
-            <router-link to="/player">
-                <div class="models">
-                    <img src="../assets/images/girl.png" alt="">
-                    <p>你的青春有没有属于你的一首歌</p>
-                </div>
-            </router-link>    
+           
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name:"DtList"
+    name:"DtList",
+    data(){
+        return{
+            djRadios:[]
+        }
+    },
+    props:{
+        params:{
+            type:Object,
+            require:true
+        },
+        url:{
+            type:String,
+            require:true
+        }
+    },
+    mounted() {
+        this.$axios.get(this.url,{
+            params:this.params
+        })
+        .then(data => {
+            console.log(data.data)
+            this.djRadios = data.data.djRadios;
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    },
 }
 </script>
 
@@ -39,14 +61,21 @@ export default {
             text-align: center;
             width: 47%;
             float: left;
-            margin: 0 1.4%;
+            margin: 5px 1.4%;
             img{
                 width: 100%;
                 float: left;
             }
             p{
-                // font-size: 12px;
+                font-size: 0.351111rem;
+                width: 100%;
+                height: 0.9rem;
                 text-align: left;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
             }
         }
         
