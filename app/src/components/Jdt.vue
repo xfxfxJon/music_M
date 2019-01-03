@@ -1,7 +1,7 @@
 <template>
-    <div>
-        jdt
-    </div>
+  <div>
+    
+  </div>
 </template>
 
 <script>
@@ -9,7 +9,7 @@
  
 
 export default {
-    name:"Jdt",
+    name:"JDT",
     data(){
         return{
 
@@ -21,6 +21,9 @@ export default {
 }
 </script>
 
-<style scoped>
 
+<style lang="less" scoped>
+    
 </style>
+
+

@@ -27,7 +27,14 @@
               <span>01:15</span>
               <img src="../assets/images/slide-button.png" alt="" class="slide-button">
           </div> -->
-          <Jdt />
+           <div class='jdt'>
+                <span class='start'>{{ftime(this.currentTime)}}</span>
+                   <div class='jdt_box_bj'>
+                       <div class='jdt_box'  ref="jdt_box_bj"></div>
+                    </div>
+                <span class='end'>{{ftime(this.durationTime)}}</span>        
+            </div>
+          <!-- <JDT /> -->
           <div class="play-icon">
               <i class="iconfont icon-danquxunhuan"></i>
               <i class="iconfont icon-xiangzuo"></i>
@@ -38,14 +45,14 @@
           
        </div>
        <div class="song">
-         <audio v-if="songData" :src="songData.url" controls ref="myPlayer" autoplay preload id="music1" ></audio>
+         <audio v-if="songData" :src="songData.url" controls ref="myPlayer" autoplay preload id="music1" hidden></audio>
        </div> 
     </div>
 </template>
 
 <script>
 import LRC from "../components/LRC" 
-import Jdt from "./components/Jdt"
+import JDT from "../components/JDT"
 export default {
     name:"Player",
     data(){
@@ -59,7 +66,7 @@ export default {
     },
     components:{
         LRC,
-        Jdt
+        JDT
     },
     mounted(){
         if(this.$route.params.musicId){
@@ -123,10 +130,18 @@ export default {
       },
       _currentTime(){
           this.currentTime = this.$refs.myPlayer.currentTime
-           
+          var bizhi = this.$refs.myPlayer.currentTime / this.$refs.myPlayer.duration;
+          this.$refs.jdt_box_bj.style.width=bizhi*100+'%'
       },
       _durationTime(){
           this.durationTime = this.$refs.myPlayer.duration
+      },
+      ftime(time){
+            var muintes = Math.floor(time/60);
+            var second = parseInt(time%60);
+            muintes = muintes<10 ?'0'+muintes : muintes;
+            second = second<10 ?'0'+second : second;
+            return muintes+':'+second;
       }
     },
      beforeDestroy() {
@@ -215,7 +230,7 @@ export default {
     .play-icon{
         display: flex;
         line-height: 60px;
-        margin-top:10px;
+        // margin-top:10px;
     }
     .icon-zanting , .icon-play{
         font-size: 50px !important;
@@ -223,6 +238,31 @@ export default {
     .songinfo p:first-child{
         font-size: 18px;
         width:200px;
+    }
+    .jdt{
+        // float: left;
+        width:100%;
+        padding:0 20px;
+        box-sizing: border-box;
+        height:30px;
+        line-height: 30px;
+    }
+    .jdt_box_bj,.start,.end{
+        float: left;
+    }
+    .jdt_box_bj{
+        width:73%;
+        height:4px;
+        background-color: white;
+        border-radius: 12px;
+        margin:0 10px;
+        margin-top: 12px;
+    }
+    .jdt_box{
+        width:0;
+        height:4px;
+        background-color: #109d59;
+        border-radius: 12px;
     }
 </style>
 
