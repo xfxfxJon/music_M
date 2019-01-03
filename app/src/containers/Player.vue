@@ -14,7 +14,7 @@
                <img :src="songDetailData.songs[0].al.picUrl" alt="">
            </div>
            <LRC :musicId="this.$route.params.musicId" :currentTime="currentTime" :durationTime="durationTime"/>
-            
+           
           <div class="icon">
              <i class="iconfont icon-shoucang"></i>
              <i class="iconfont icon-xiazai"></i>
@@ -37,7 +37,7 @@
           
        </div>
        <div class="song">
-         <audio v-if="songData" :src="songData.url" controls ref="myPlayer" autoplay preload id="music1" hidden></audio>
+         <audio v-if="songData" :src="songData.url" controls ref="myPlayer" autoplay preload id="music1" ></audio>
        </div> 
     </div>
 </template>
@@ -87,8 +87,8 @@ export default {
             })
         }
     },
-    beforeDestroy() {
-         this.removeEventListener();
+    updated() {
+        this.addEventListener();
     },
     methods:{
         bzSwitch(){
@@ -120,12 +120,15 @@ export default {
       },
       _currentTime(){
           this.currentTime = this.$refs.myPlayer.currentTime
+           
       },
       _durationTime(){
           this.durationTime = this.$refs.myPlayer.duration
       }
-    }
-    
+    },
+     beforeDestroy() {
+         this.removeEventListener();
+    },
 }
 </script>
 
@@ -173,6 +176,7 @@ export default {
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
+        overflow: hidden;
     }
     .singer-img-box img{
         width:92.5%;

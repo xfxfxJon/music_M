@@ -1,7 +1,13 @@
 <template>
-    <div class="lrc" ref="lrc">
-        <p v-for="(item,key,index) in lrcData"
-        :key="index">{{ item }}</p>
+    <div class="lrcContainer">
+        <div class="lrc" ref="lrc">
+            <p 
+            :class="{'active':keyArr[index] < currentTime &&  keyArr[index+1] > currentTime}"
+            v-for="(item,key,index) in lrcData"
+            :key="index">
+            {{ item }}{{ getScrollTop(index) }}</p>
+            <!-- <p>{{this.currentTime}}</p> -->
+        </div>
     </div>
 </template>
 
@@ -45,6 +51,15 @@ export default {
             })
             .catch(error => new Error(error));
         }
+        
+    },
+    computed:{
+        getAllKey(){
+            for(var i in this.lrcData){
+                this.keyArr.push(i)
+            }
+            
+        }
     },
     methods:{
         setLRCData(data){
@@ -67,19 +82,43 @@ export default {
                     var time = min * 60 + sec;
                     lrcObj[time] = clause;
                 }
-                // console.log(lrcObj)
+                console.log(lrcObj)
             }
              this.lrcData = lrcObj;
+             this.getAllKey();
+             
+        },
+        getScrollTop(index){
+            console.log(this.currentTime)
+            if(this.keyArr[index] < this.currentTime &&  this.keyArr[index+1] > this.currentTime){
+                // 符合滚动条件
+                this.$refs.lrc.style.top = -((index-1)*30)+"px"
+            }
         }
     }
 }
 </script>
 
 <style scoped>
-    .lrc{
+    .active {
+        color: red;
+    }
+    .lrcContainer{
         width:100%;
         height:80px;
-        background-color: blueviolet;
-        padding:0 20px;
+        /* background-color: blueviolet; */
+        overflow: hidden;
+        position: relative;
+    }
+    .lrc{
+        width: 100%;
+        font-size:12px;
+        text-align: center;
+        position: absolute;
+        top: 0;
+    }
+    .lrc p {
+        height: 30px;
+        line-height: 30px;
     }
 </style>
