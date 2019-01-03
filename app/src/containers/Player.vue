@@ -21,12 +21,13 @@
              <i class="iconfont icon-pinglun"></i>
              <i class="iconfont icon-gengduo-copy"></i>
           </div>
-          <div class="play">
+          <!-- <div class="play">
               <span>01:15</span>
               <img src="../assets/images/scroll-bar.png" alt="">
               <span>01:15</span>
               <img src="../assets/images/slide-button.png" alt="" class="slide-button">
-          </div>
+          </div> -->
+          <Jdt />
           <div class="play-icon">
               <i class="iconfont icon-danquxunhuan"></i>
               <i class="iconfont icon-xiangzuo"></i>
@@ -43,7 +44,8 @@
 </template>
 
 <script>
-import LRC from "../components/LRC";
+import LRC from "../components/LRC" 
+import Jdt from "./components/Jdt"
 export default {
     name:"Player",
     data(){
@@ -56,7 +58,8 @@ export default {
         }
     },
     components:{
-        LRC
+        LRC,
+        Jdt
     },
     mounted(){
         if(this.$route.params.musicId){
