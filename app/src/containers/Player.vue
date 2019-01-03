@@ -13,7 +13,7 @@
            <div class="singer-img-box">
                <img :src="songDetailData.songs[0].al.picUrl" alt="">
            </div>
-           <LRC :musicId="this.$route.params.musicId"/>
+           <LRC :musicId="this.$route.params.musicId" :currentTime="currentTime" :durationTime="durationTime"/>
             
           <div class="icon">
              <i class="iconfont icon-shoucang"></i>
@@ -50,7 +50,9 @@ export default {
         return{
             songData:{},
             clSwitch:"icon-zanting",
-            songDetailData:{}
+            songDetailData:{},
+            currentTime:0,
+            durationTime:0
         }
     },
     components:{
@@ -104,7 +106,24 @@ export default {
               return title.substring(0,12)+"..."
           }
           return title;
+      },
+      addEventListener(){
+          this.$refs.myPlayer.addEventListener("timeupdate",this._currentTime)
+          this.$refs.myPlayer.addEventListener("canplay",this._durationTime)
+      },
+      removeEventListener(){
+          this.$refs.myPlayer.removeEventListener("timeupdate",this._currentTime)
+          this.$refs.myPlayer.removeEventListener("canplay",this._durationTime)
+      },
+      _currentTime(){
+          this.currentTime = this.$refs.myPlayer.currentTime
+      },
+      _durationTime(){
+          this.durationTime = this.$refs.myPlayer.duration
       }
+    },
+    beforeDestroy() {
+         this.removeEventListener();
     }
 }
 </script>

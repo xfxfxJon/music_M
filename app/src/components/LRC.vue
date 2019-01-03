@@ -1,6 +1,7 @@
 <template>
-    <div class="lrc">
-        lrc123
+    <div class="lrc" ref="lrc">
+        <p v-for="(item,key,index) in lrcData"
+        :key="index">{{ item }}</p>
     </div>
 </template>
 
@@ -21,6 +22,14 @@ export default {
         musicId:{
             type:[String,Number],
             required:true
+        },
+        currentTime: {
+            type: [String, Number],
+            default: 0
+         },
+        durationTime: {
+            type: [String, Number],
+            default: 0
         }
     },
     mounted(){
@@ -34,7 +43,7 @@ export default {
                 this.setLRCData(res.data);
             })
             .catch(error => new Error(error));
-            }
+        }
     },
     methods:{
         setLRCData(data){
@@ -46,6 +55,7 @@ export default {
                 //  console.log(lyric)
                 var timeReg = /\[\d*:\d*((\.|\:)\d*)*\]/g;
                 var timeRegExpArr = lyric.match(timeReg); //test
+                console.log(timeRegExpArr)
                 if (!timeRegExpArr) continue;
                 var clause = lyric.replace(timeReg, "");
                 // console.log(clause)
@@ -56,8 +66,9 @@ export default {
                     var time = min * 60 + sec;
                     lrcObj[time] = clause;
                 }
-                console.log(lrcObj)
+                // console.log(lrcObj)
             }
+             this.lrcData = lrcObj;
         }
     }
 }
