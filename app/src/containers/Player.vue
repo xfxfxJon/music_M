@@ -87,6 +87,9 @@ export default {
             })
         }
     },
+    beforeDestroy() {
+         this.removeEventListener();
+    },
     methods:{
         bzSwitch(){
             // if(this.$refs.myPlayer !== null){
@@ -121,10 +124,8 @@ export default {
       _durationTime(){
           this.durationTime = this.$refs.myPlayer.duration
       }
-    },
-    beforeDestroy() {
-         this.removeEventListener();
     }
+    
 }
 </script>
 

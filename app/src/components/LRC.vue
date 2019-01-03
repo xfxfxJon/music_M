@@ -12,7 +12,8 @@ export default {
     name:"LRC",
     data(){
         return{
-            lrcData: {} 
+            lrcData: {},
+            keyArr: [] 
         }
     },
     components:{
