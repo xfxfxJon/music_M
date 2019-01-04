@@ -16,7 +16,7 @@
            <LRC :musicId="this.$route.params.musicId" :currentTime="currentTime" :durationTime="durationTime"/>
            
           <div class="icon">
-             <i class="iconfont icon-shoucang"></i>
+             <i class="iconfont icon-shoucang" @click="collect" ref="shoucang"></i>
              <i class="iconfont icon-xiazai"></i>
              <i class="iconfont icon-pinglun"></i>
              <i class="iconfont icon-gengduo-copy" @click="iconClickHandler"></i>
@@ -182,6 +182,17 @@ export default {
       },
       iconClickHandler(){
           this.flag = !this.flag
+      },
+      collect(){
+          this.$refs.shoucang.style.color="red"
+          var info ={
+             collectSongId :  this.songData.id
+          }
+          
+          var loc =[]
+          loc.push(info)
+          localStorage.setItem("collectSong",JSON.stringify(loc))
+        
       }
     },
      beforeDestroy() {
