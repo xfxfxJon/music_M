@@ -19,7 +19,7 @@
              <i class="iconfont icon-shoucang"></i>
              <i class="iconfont icon-xiazai"></i>
              <i class="iconfont icon-pinglun"></i>
-             <i class="iconfont icon-gengduo-copy"></i>
+             <i class="iconfont icon-gengduo-copy" @click="iconClickHandler"></i>
           </div>
           <!-- <div class="play">
               <span>01:15</span>
@@ -44,6 +44,42 @@
           </div>
           
        </div>
+        <div class="bg-more-box" v-show="flag" @click="iconClickHandler">
+            <ul class="more-box">
+                <li>
+                    <i class="iconfont icon-play"></i>
+                    <p>下一首播放</p>
+                </li>
+                <li>
+                    <i class="iconfont icon-play"></i>
+                    <p>收藏到歌单</p>
+                </li>
+                <li>
+                    <i class="iconfont icon-play"></i>
+                    <p>下载</p>
+                </li>
+                <li>
+                    <i class="iconfont icon-play"></i>
+                    <p>评论</p>
+                </li>
+                <li>
+                    <i class="iconfont icon-play"></i>
+                    <p>分享</p>
+                </li>
+                <li>
+                    <i class="iconfont icon-play"></i>
+                    <p>歌手:beyond</p>
+                </li>
+                <li>
+                    <i class="iconfont icon-play"></i>
+                    <p>专辑</p>
+                </li>
+                <li>
+                    <i class="iconfont icon-play"></i>
+                    <p>查看视频</p>
+                </li>
+            </ul>
+        </div>
        <div class="song">
          <audio v-if="songData" :src="songData.url" controls ref="myPlayer" autoplay preload id="music1" hidden></audio>
        </div> 
@@ -52,7 +88,7 @@
 
 <script>
 import LRC from "../components/LRC" 
-import JDT from "../components/JDT"
+
 export default {
     name:"Player",
     data(){
@@ -61,12 +97,12 @@ export default {
             clSwitch:"icon-zanting",
             songDetailData:{},
             currentTime:0,
-            durationTime:0
+            durationTime:0,
+            flag:false
         }
     },
     components:{
-        LRC,
-        JDT
+        LRC
     },
     mounted(){
         if(this.$route.params.musicId){
@@ -78,6 +114,7 @@ export default {
             .then(res=>{
                 console.log(res)
                 this.songData = res.data.data[0]
+                localStorage.setItem("musicId",res.data.data[0].id)
             })
             .catch(error=>{
                 console.log(error)
@@ -89,7 +126,7 @@ export default {
                 }
             })
             .then(res=>{
-                console.log(res)
+                // console.log(res)
                 this.songDetailData = res.data
             })
             .catch(error=>{
@@ -142,6 +179,9 @@ export default {
             muintes = muintes<10 ?'0'+muintes : muintes;
             second = second<10 ?'0'+second : second;
             return muintes+':'+second;
+      },
+      iconClickHandler(){
+          this.flag = !this.flag
       }
     },
      beforeDestroy() {
@@ -232,7 +272,7 @@ export default {
         line-height: 60px;
         // margin-top:10px;
     }
-    .icon-zanting , .icon-play{
+    .play-icon .icon-zanting ,.play-icon .icon-play{
         font-size: 50px !important;
     }
     .songinfo p:first-child{
@@ -263,6 +303,41 @@ export default {
         height:4px;
         background-color: #109d59;
         border-radius: 12px;
+    }
+    .bg-more-box{
+        width:100%;
+        height:100%;
+        background-color: rgba(0,0,0, .2);
+        position: fixed;
+        bottom: 0;
+        left:0;
+        z-index: 199;
+    }
+    .more-box{
+        width:100%;
+        background-color: #fff;
+        padding: 0 10px;
+        box-sizing: border-box;
+        position: absolute;
+        bottom: 0;
+        left:0;
+        z-index: 200;
+        border-radius: 5px;
+    }
+    .more-box li{
+        overflow: hidden;
+       
+    }
+    .more-box li i{
+        float:left;
+        padding:5px 0;
+    }
+    .more-box li p{
+        width:90%;
+        float:left;
+        margin-left:10px;
+        padding:8px 0;
+        border-bottom: solid 1px #e3e3e3;
     }
 </style>
 

@@ -71,7 +71,7 @@ export default {
                 //  console.log(lyric)
                 var timeReg = /\[\d*:\d*((\.|\:)\d*)*\]/g;
                 var timeRegExpArr = lyric.match(timeReg); //test
-                console.log(timeRegExpArr)
+                // console.log(timeRegExpArr)
                 if (!timeRegExpArr) continue;
                 var clause = lyric.replace(timeReg, "");
                 // console.log(clause)
@@ -82,14 +82,14 @@ export default {
                     var time = min * 60 + sec;
                     lrcObj[time] = clause;
                 }
-                console.log(lrcObj)
+                // console.log(lrcObj)
             }
              this.lrcData = lrcObj;
              this.getAllKey();
              
         },
         getScrollTop(index){
-            console.log(this.currentTime)
+            // console.log(this.currentTime)
             if(this.keyArr[index] < this.currentTime &&  this.keyArr[index+1] > this.currentTime){
                 // 符合滚动条件
                 this.$refs.lrc.style.top = -((index-1)*30)+"px"

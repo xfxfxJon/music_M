@@ -1,15 +1,14 @@
 <template>
     <div>
-        <input class="myinput" type="text" v-model="searchData"  >
+        <input class="myinput" type="text" v-model="searchData" >
         <button @click="clickHandler" class="btn">搜索</button>
         <ul class="search-song-list" v-if="songData.length>0">
-          <router-link
-           :to="{name:'Player',
-           params:{musicId:item.id,name:item.name,auther:item.artists.name}}"
-           v-for="(item,index) in songData" 
-           :key="index"
-           >
-            <li class="search-song-item" >
+            <li class="search-song-item"  v-for="(item,index) in songData" 
+                :key="index">
+              <router-link
+                :to="{name:'Player',
+                params:{musicId:item.id,name:item.name,auther:item.artists.name}}"
+                >
                 <div class="search-song-name">
                     <p>{{setMusicTitle(item.name)}}</p>
                     <p>
@@ -17,12 +16,12 @@
                         <span>{{setMusicTitle(item.name)}}</span>
                     </p>
                 </div>
+             </router-link>
                 <div class="search-song-play">
                     <i class="iconfont icon-play"></i>
                     <i class="iconfont icon-gengduo-copy" @click="iconClickHandler"></i>
                 </div>
             </li>
-          </router-link>
         </ul>
         <div class="bg-more-box" v-show="flag" @click="iconClickHandler">
             <ul class="more-box">
@@ -65,13 +64,20 @@
 <script>
 export default {
     name:"SearchInput",
+      props:{
+        inputData:{
+            type:String,
+            default:""
+        }
+    },
     data(){
         return{
-            searchData:"",
+            searchData:this.inputData ,
             songData :[],
             flag:false
         }
     },
+  
     watch:{
         searchData(value){
             console.log(value);
@@ -126,17 +132,18 @@ export default {
         background-color: #fff;
         padding:0 10px;
         width:100%;
-        height:100%;
+        // height:100%;
         box-sizing: border-box;
+        // overflow: hidden;
     }
     .search-song-item{
         overflow: hidden;
-        
-        border-bottom:solid 1px #e3e3e3;
-        padding: 10px 0;
+        border-bottom:solid 1px #e3e3e3; 
     }
     .search-song-name{
         float: left;
+        width:85%;
+        padding: 10px 0;
     }
     .search-song-name p:first-child{
         color:blueviolet;
@@ -144,6 +151,7 @@ export default {
     }
     .search-song-play{
         float: right;
+        padding: 10px 0;
     }
     .bg-more-box{
         width:100%;
